@@ -1,1 +1,7 @@
 ---- START at 2025-09-08 15:21:35, Target=369/369 ----
+[11/369] SABWAU01_clean_DDEC_CO2_298.0K_5.0bar_12.5 Done. TimeForThis=1165.9s, Completed=1/369, ETA=2025-09-13 14:51:43
+[2/369] LARZEL_SL_part_DDEC_CO2_298.0K_5.0bar_12.5 Done. TimeForThis=1440.8s, Completed=2/369, ETA=2025-09-11 17:11:58
+[7/369] PEVLIN_clean_DDEC_CO2_298.0K_5.0bar_12.5 Done. TimeForThis=2845.9s, Completed=3/369, ETA=2025-09-12 16:35:43
+[18/369] ECUCOV_clean_DDEC_CO2_298.0K_5.0bar_12.5 Done. TimeForThis=2973.7s, Completed=4/369, ETA=2025-09-11 19:33:43
+[3/369] SADMIV_clean_DDEC_CO2_298.0K_5.0bar_12.5 Done. TimeForThis=3300.4s, Completed=5/369, ETA=2025-09-11 11:01:07
+[25/369] TEVZIE_clean_DDEC_CO2_298.0K_5.0bar_12.5 Done. TimeForThis=3602.1s, Completed=6/369, ETA=2025-09-11 04:53:42
