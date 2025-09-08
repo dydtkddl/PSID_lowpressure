@@ -1,0 +1,49 @@
+Cell info:
+========================================================================
+number-of-unit-cells: 4 4 2
+unit-cell-vector-a:     8.752500000000     0.000000000000     0.000000000000
+unit-cell-vector-b:     0.000000000000     8.749200000000     0.000000000000
+unit-cell-vector-c:    -5.751889678232     0.000000000000    26.889696337621
+
+cell-vector-a:    35.010000000000     0.000000000000     0.000000000000
+cell-vector-b:     0.000000000000    34.996800000000     0.000000000000
+cell-vector-c:   -11.503779356464     0.000000000000    53.779392675241
+
+cell-lengths:     8.752500000000     8.749200000000    27.498000000000
+cell-angles:    90.000000000000   102.074000000000    90.000000000000
+
+
+Maximum changes for MC-moves:
+========================================================================
+Maximum-volume-change: 0.000781
+Maximum-Gibbs-volume-change: 0.003125
+Maximum-box-shape-change: 0.100000 0.100000 0.100000, 0.100000 0.100000 0.100000, 0.100000 0.100000 0.100000
+
+
+Acceptance targets for MC-moves:
+========================================================================
+Target-volume-change: 0.500000
+Target-box-shape-change: 0.500000
+Target-Gibbs-volume-change: 0.500000
+
+
+Components: 1 (Adsorbates 0, Cations 0)
+========================================================================
+Component 0 (CO2)
+	Fractional-molecule-id component 0: -1
+	Lambda-factors component 0:  0.000000 0.000000 0.000000
+	Number-of-biasing-factors component 0: 21
+	Biasing-factors component 0:  0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+	Maximum-CF-Lambda-change component 0: 0.500000
+	Maximum-CBCF-Lambda-change component 0: 0.500000
+
+	Maximum-translation-change component 0: 0.040625,0.040625,0.040625
+	Maximum-translation-in-plane-change component 0: 0.000000,0.000000,0.000000
+	Maximum-rotation-change component 0: 0.017453 0.017453 0.017453
+
+Reactions: 0
+
+Component: 0     Adsorbate    0 molecules of CO2
+------------------------------------------------------------------------
+
+

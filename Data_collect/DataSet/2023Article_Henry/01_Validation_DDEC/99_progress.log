@@ -1,0 +1,24 @@
+---- START at 2025-09-08 13:49:31, Target=22/22 ----
+[19/22] __pycache__ FAILED: Command '/home/yongsang/PSID_SIMULATION_TOOLS/RASPA/bin/simulate simulation.input' died with <Signals.SIGSEGV: 11>.
+[3/22] MOFs_cifs_data_ddec_charges FAILED: Command '/home/yongsang/PSID_SIMULATION_TOOLS/RASPA/bin/simulate simulation.input' died with <Signals.SIGSEGV: 11>.
+[15/22] WAQFIG_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=710.1s, Completed=1/22, ETA=2025-09-08 18:09:54
+[21/22] FORKUU_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=737.7s, Completed=2/22, ETA=2025-09-08 16:04:47
+[9/22] XAPCOJ_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=963.2s, Completed=3/22, ETA=2025-09-08 15:47:15
+[16/22] PEPLOM_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1008.8s, Completed=4/22, ETA=2025-09-08 15:21:59
+[13/22] XAPGOK_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1016.7s, Completed=5/22, ETA=2025-09-08 15:04:04
+[11/22] SOPPOD_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1029.5s, Completed=6/22, ETA=2025-09-08 14:52:26
+[4/22] ZIKJIO_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1053.2s, Completed=7/22, ETA=2025-09-08 14:44:41
+[14/22] XAJQAC_SL_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1141.6s, Completed=8/22, ETA=2025-09-08 14:41:50
+[6/22] OCUGEZ01_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1202.0s, Completed=9/22, ETA=2025-09-08 14:38:29
+[2/22] GIKMOD10_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1253.4s, Completed=10/22, ETA=2025-09-08 14:35:29
+[20/22] HOVJIN_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1282.1s, Completed=11/22, ETA=2025-09-08 14:32:15
+[22/22] NUYWOU_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1284.4s, Completed=12/22, ETA=2025-09-08 14:28:46
+[7/22] OTIPEO_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1304.7s, Completed=13/22, ETA=2025-09-08 14:26:19
+[12/22] TUMROK_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1447.2s, Completed=14/22, ETA=2025-09-08 14:27:25
+[5/22] KETHEY02_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1455.1s, Completed=15/22, ETA=2025-09-08 14:25:05
+[10/22] FINQOK_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1618.1s, Completed=16/22, ETA=2025-09-08 14:26:36
+[18/22] XEWFAI_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1691.1s, Completed=17/22, ETA=2025-09-08 14:26:00
+[1/22] YERJEL_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1698.5s, Completed=18/22, ETA=2025-09-08 14:24:07
+[17/22] JOXPIX_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=1833.1s, Completed=19/22, ETA=2025-09-08 14:24:54
+[8/22] FATLUJ_clean_DDEC_CO2_298.0K_1.0bar_14.0 Done. TimeForThis=2017.0s, Completed=20/22, ETA=2025-09-08 14:26:30
+---- ALL DONE at 2025-09-08 14:23:08 ----
