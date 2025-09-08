@@ -4,7 +4,7 @@ NumberOfInitializationCycles  0
 PrintEvery                    1000
 PrintPropertiesEvery          1000
 
-Forcefield                    AutomationScript
+Forcefield                    doi10_1038
 
 Framework 0
 FrameworkName {MOF}
