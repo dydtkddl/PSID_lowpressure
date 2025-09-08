@@ -1,0 +1,7 @@
+*.data
+**/VTK
+**/Movies
+**/Restart
+**/Output
+**/simulation.input
+**/*clean*
