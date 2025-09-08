@@ -4,7 +4,9 @@ NumberOfInitializationCycles  {NumberOfInitializationCycles}
 PrintEvery                    {PrintEvery}
 RestartFile                   no
 
-Forcefield                    GarciaPerez2006ForceField
+Cutoff 12.5
+AddAtomNumberCodeToLabel yes
+Forcefield                     doi10_1038
 UseChargesFromCIFFile yes
 
 Framework 0
@@ -15,11 +17,9 @@ ExternalPressure    {PRESSURE}
 
 Component 0 MoleculeName             {GAS}
             MoleculeDefinition       ExampleDefinitions
-            FugacityCoefficient      1.0
             TranslationProbability   0.5
             RotationProbability      0.5
             ReinsertionProbability   0.5
             SwapProbability          1.0
             CreateNumberOfMolecules  0
-
 

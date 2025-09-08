@@ -4,18 +4,18 @@ import subprocess
 from joblib import Parallel, delayed
 from tqdm import tqdm
 
-pressure = "1"
-temp = "293"
+pressure = "5"
+temp = "298"
 gas = "CO2"
 base_input = "00base_template.input"
-CUTOFFVDW = "14.0"
-CUTOFFCHARGECHARGE = "14.0"
-CUTOFFCHARGEBONDDIPOLE = "14.0"
-CUTOFFBONDDIPOLEBONDDIPOLE = "14.0"
+CUTOFFVDW = "12.5"
+CUTOFFCHARGECHARGE = "12.50"
+CUTOFFCHARGEBONDDIPOLE = "12.50"
+CUTOFFBONDDIPOLEBONDDIPOLE = "12.50"
 
-NumberOfCycles = "100"
-NumberOfInitializationCycles = "100"
-PrintEvery = "100"
+NumberOfCycles = "20000"
+NumberOfInitializationCycles = "1000"
+PrintEvery = "1000"
 
 def run_simulation(mof):
     try:
