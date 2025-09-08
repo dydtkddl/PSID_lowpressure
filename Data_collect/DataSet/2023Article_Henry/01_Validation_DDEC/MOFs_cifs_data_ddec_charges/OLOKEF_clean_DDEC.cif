@@ -1,0 +1,58 @@
+
+##########################################################################
+#               Crystallographic Information Format file
+#               Produced by PyCifRW module
+#
+#  This is a CIF file.  CIF has been adopted by the International
+#  Union of Crystallography as the standard for data archiving and
+#  transmission.
+#
+#  For information on this file format, follow the CIF links at
+#  http://www.iucr.org
+##########################################################################
+
+data_image0
+
+_cell_length_a                          6.91
+_cell_length_b                          7.389
+_cell_length_c                          8.223
+_cell_angle_alpha                       90.08
+_cell_angle_beta                        109.83
+_cell_angle_gamma                       93.37
+_symmetry_space_group_name_H-M          'P 1'
+_symmetry_int_tables_number             1
+loop_
+  _symmetry_equiv_pos_as_xyz
+         'x, y, z' 
+loop_
+  _atom_site_label
+  _atom_site_occupancy
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_thermal_displace_type
+  _atom_site_B_iso_or_equiv
+  _atom_site_type_symbol
+  _atom_site_charge
+         C1        1.0000    0.46050   0.42860   0.33320   Biso      1.000     C          -0.041204000000000005         
+         C2        1.0000    0.35240   0.73950   0.21200   Biso      1.000     C          0.610874  
+         C3        1.0000    0.58100   0.66130   0.84030   Biso      1.000     C          0.6063    
+         C4        1.0000    0.53950   0.57140   0.66680   Biso      1.000     C          -0.041206           
+         C5        1.0000    0.58120   0.39210   0.64280   Biso      1.000     C          -0.036823           
+         C6        1.0000    0.45790   0.67700   0.52260   Biso      1.000     C          -0.10518699999999999          
+         C7        1.0000    0.64760   0.26050   0.78800   Biso      1.000     C          0.610872  
+         C8        1.0000    0.41900   0.33870   0.15970   Biso      1.000     C          0.606298  
+         C9        1.0000    0.54210   0.32300   0.47740   Biso      1.000     C          -0.10518800000000002          
+         C10       1.0000    0.41880   0.60790   0.35720   Biso      1.000     C          -0.036826           
+         H1        1.0000    0.42900   0.79600   0.53750   Biso      1.000     H          0.138233  
+         H2        1.0000    0.57100   0.20400   0.46250   Biso      1.000     H          0.138234  
+         Ni1       1.0000    0.00000   0.50000   0.00000   Biso      1.000     Ni          0.79074   
+         Ni2       1.0000    0.50000   0.00000   0.00000   Biso      1.000     Ni          0.7674880000000001  
+         O1        1.0000    0.44760   0.76440   0.85100   Biso      1.000     O          -0.47955299999999995          
+         O2        1.0000    0.74510   0.63790   0.96150   Biso      1.000     O          -0.501396           
+         O3        1.0000    0.82930   0.27030   0.89540   Biso      1.000     O          -0.506551           
+         O4        1.0000    0.51250   0.14110   0.78970   Biso      1.000     O          -0.46380299999999997          
+         O5        1.0000    0.55240   0.23560   0.14900   Biso      1.000     O          -0.47955299999999995          
+         O6        1.0000    0.25490   0.36210   0.03850   Biso      1.000     O          -0.501397           
+         O7        1.0000    0.17070   0.72970   0.10460   Biso      1.000     O          -0.50655  
+         O8        1.0000    0.48750   0.85890   0.21030   Biso      1.000     O          -0.463804 
