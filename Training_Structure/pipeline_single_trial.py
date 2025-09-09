@@ -484,11 +484,18 @@ def main():
     logger = setup_logger(outdir=trial_dir, name=f"Pipeline_trial{args.trial:03d}", level=logging.INFO)
 
     # Load
+    
     df = pd.read_csv(args.data)
+    mis_lis = ["BIWSEG_ion_b","LETQAE01_ion_b","VEWLAM_clean","ja406030p_si_007_manual","HIHGEM_manual","ja406030p_si_002_manual","POZHUI_ion_b","DONNAW01_SL",]
+    if "filename" in df.columns:
+        before = len(df)
+        df = df[~df["filename"].isin(mis_lis)].reset_index(drop=True)
+        print(f"Removed {before - len(df)} rows from mis_lis")
     logger.info(f"[Data] Loaded: {args.data} | rows={len(df)} | cols={len(df.columns)}")
 
     # Preprocess
     df = preprocess_has_oms(df)
+    
     TARGET = args.target
     META_KEEP = args.meta
 
