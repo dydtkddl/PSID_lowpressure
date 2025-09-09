@@ -1,0 +1,11 @@
+2025-09-09 13:40:16,806 | INFO | [Data] Loaded: ../Data_collect/DataSet/He_313K/He_313K_He_313_0.01_to_He_313_5_dataset.csv | rows=10189 | cols=16
+2025-09-09 13:40:16,808 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-09 13:40:16,814 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 10189 -> 10189
+2025-09-09 13:40:16,818 | INFO | [Seeds] trial=1 | seeds={'seed': 53, 'seed_qt': 1052, 'seed_rd': 2052, 'model_seed': 3052}
+2025-09-09 13:40:16,821 | INFO | [S3 QT→RD] train(qt)=4076, train(rd)=4075, test=2038 (train_ratio=0.80, qt_frac_total=0.40, shift=0.000e+00)
+2025-09-09 13:40:16,837 | INFO | [Model] kind=nn | params={'activation': 'relu', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (128, 64), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 1000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': 3052, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+2025-09-09 13:40:16,837 | INFO | [Holdout_trial001] Train=8151 | Test=2038
+2025-09-09 13:40:17,877 | INFO | [Timing_trial001] fit_time=1.039s
+2025-09-09 13:40:17,884 | INFO | [Timing_trial001] predict_time=0.006s
+2025-09-09 13:40:17,887 | INFO | [Metrics_trial001] R2=-10.360498 | MAE=0.236852 | RMSE=0.096815 | MAPE%=360.108
+2025-09-09 13:40:17,887 | INFO | [Importance] Using permutation_importance

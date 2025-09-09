@@ -1,0 +1,64 @@
+2025-09-09 14:18:14,282 | INFO | [Data] Loaded: ../Data_collect/DataSet/He_313K/He_313K_He_313_0.01_to_He_313_5_dataset.csv | rows=10189 | cols=16
+2025-09-09 14:18:14,284 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-09 14:18:14,287 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 10189 -> 10189
+2025-09-09 14:18:14,291 | INFO | [Seeds] trial=1 | seeds={'seed': 43, 'seed_qt': 1042, 'seed_rd': 2042, 'model_seed': 3042}
+2025-09-09 14:18:14,294 | INFO | [S3 QT→RD] train(qt)=4076, train(rd)=4075, test=2038 (train_ratio=0.80, qt_frac_total=0.40, shift=0.000e+00)
+2025-09-09 14:18:15,274 | INFO | [Epoch 0] Train Loss=173.445432 | Val Loss=0.133074
+2025-09-09 14:18:15,387 | INFO | [Epoch 1] Train Loss=0.704779 | Val Loss=0.034003
+2025-09-09 14:18:15,484 | INFO | [Epoch 2] Train Loss=0.257935 | Val Loss=0.028220
+2025-09-09 14:18:15,570 | INFO | [Epoch 3] Train Loss=0.194353 | Val Loss=0.022101
+2025-09-09 14:18:15,658 | INFO | [Epoch 4] Train Loss=0.135686 | Val Loss=0.017636
+2025-09-09 14:18:15,755 | INFO | [Epoch 5] Train Loss=0.102153 | Val Loss=0.014075
+2025-09-09 14:18:15,859 | INFO | [Epoch 6] Train Loss=0.081000 | Val Loss=0.012617
+2025-09-09 14:18:15,958 | INFO | [Epoch 7] Train Loss=0.065080 | Val Loss=0.009038
+2025-09-09 14:18:16,060 | INFO | [Epoch 8] Train Loss=0.054904 | Val Loss=0.006889
+2025-09-09 14:18:16,152 | INFO | [Epoch 9] Train Loss=0.051068 | Val Loss=0.005677
+2025-09-09 14:18:16,243 | INFO | [Epoch 10] Train Loss=0.049051 | Val Loss=0.004524
+2025-09-09 14:18:16,335 | INFO | [Epoch 11] Train Loss=0.048704 | Val Loss=0.004253
+2025-09-09 14:18:16,431 | INFO | [Epoch 12] Train Loss=0.044896 | Val Loss=0.003592
+2025-09-09 14:18:16,522 | INFO | [Epoch 13] Train Loss=0.045514 | Val Loss=0.004241
+2025-09-09 14:18:16,617 | INFO | [Epoch 14] Train Loss=0.049572 | Val Loss=0.005764
+2025-09-09 14:18:16,724 | INFO | [Epoch 15] Train Loss=0.042006 | Val Loss=0.003255
+2025-09-09 14:18:16,823 | INFO | [Epoch 16] Train Loss=0.043625 | Val Loss=0.003304
+2025-09-09 14:18:16,927 | INFO | [Epoch 17] Train Loss=0.039834 | Val Loss=0.003402
+2025-09-09 14:18:17,018 | INFO | [Epoch 18] Train Loss=0.042851 | Val Loss=0.002181
+2025-09-09 14:18:17,120 | INFO | [Epoch 19] Train Loss=0.039720 | Val Loss=0.003391
+2025-09-09 14:18:17,206 | INFO | [Epoch 20] Train Loss=0.048857 | Val Loss=0.002988
+2025-09-09 14:18:17,292 | INFO | [Epoch 21] Train Loss=0.038164 | Val Loss=0.001913
+2025-09-09 14:18:17,390 | INFO | [Epoch 22] Train Loss=0.038048 | Val Loss=0.003858
+2025-09-09 14:18:17,493 | INFO | [Epoch 23] Train Loss=0.037480 | Val Loss=0.001732
+2025-09-09 14:18:17,596 | INFO | [Epoch 24] Train Loss=0.050961 | Val Loss=0.003281
+2025-09-09 14:18:17,687 | INFO | [Epoch 25] Train Loss=0.065311 | Val Loss=0.001853
+2025-09-09 14:18:17,778 | INFO | [Epoch 26] Train Loss=0.044962 | Val Loss=0.001874
+2025-09-09 14:18:17,874 | INFO | [Epoch 27] Train Loss=0.053374 | Val Loss=0.001628
+2025-09-09 14:18:17,974 | INFO | [Epoch 28] Train Loss=0.043678 | Val Loss=0.002447
+2025-09-09 14:18:18,078 | INFO | [Epoch 29] Train Loss=0.035197 | Val Loss=0.001092
+2025-09-09 14:18:18,185 | INFO | [Epoch 30] Train Loss=0.042979 | Val Loss=0.001333
+2025-09-09 14:18:18,272 | INFO | [Epoch 31] Train Loss=0.056460 | Val Loss=0.002081
+2025-09-09 14:18:18,370 | INFO | [Epoch 32] Train Loss=0.041505 | Val Loss=0.000771
+2025-09-09 14:18:18,475 | INFO | [Epoch 33] Train Loss=0.037445 | Val Loss=0.004323
+2025-09-09 14:18:18,573 | INFO | [Epoch 34] Train Loss=0.067251 | Val Loss=0.001086
+2025-09-09 14:18:18,674 | INFO | [Epoch 35] Train Loss=0.052960 | Val Loss=0.003243
+2025-09-09 14:18:18,794 | INFO | [Epoch 36] Train Loss=0.063600 | Val Loss=0.000939
+2025-09-09 14:18:18,929 | INFO | [Epoch 37] Train Loss=0.060754 | Val Loss=0.003094
+2025-09-09 14:18:19,050 | INFO | [Epoch 38] Train Loss=0.048105 | Val Loss=0.005440
+2025-09-09 14:18:19,169 | INFO | [Epoch 39] Train Loss=0.088713 | Val Loss=0.012227
+2025-09-09 14:18:19,293 | INFO | [Epoch 40] Train Loss=0.138583 | Val Loss=0.003263
+2025-09-09 14:18:19,403 | INFO | [Epoch 41] Train Loss=0.121789 | Val Loss=0.003430
+2025-09-09 14:18:19,519 | INFO | [Epoch 42] Train Loss=0.082072 | Val Loss=0.002599
+2025-09-09 14:18:19,630 | INFO | [Epoch 43] Train Loss=0.055910 | Val Loss=0.001166
+2025-09-09 14:18:19,737 | INFO | [Epoch 44] Train Loss=0.052092 | Val Loss=0.003509
+2025-09-09 14:18:19,837 | INFO | [Epoch 45] Train Loss=0.109779 | Val Loss=0.005173
+2025-09-09 14:18:19,955 | INFO | [Epoch 46] Train Loss=0.335780 | Val Loss=0.008691
+2025-09-09 14:18:20,058 | INFO | [Epoch 47] Train Loss=0.120366 | Val Loss=0.008855
+2025-09-09 14:18:20,162 | INFO | [Epoch 48] Train Loss=0.110332 | Val Loss=0.001190
+2025-09-09 14:18:20,265 | INFO | [Epoch 49] Train Loss=0.151062 | Val Loss=0.008520
+2025-09-09 14:18:20,391 | INFO | [Epoch 50] Train Loss=0.191657 | Val Loss=0.011901
+2025-09-09 14:18:20,510 | INFO | [Epoch 51] Train Loss=1.880312 | Val Loss=0.059824
+2025-09-09 14:18:20,630 | INFO | [EarlyStopping] Epoch 52: val_loss did not improve for 20 rounds. Stop training.
+2025-09-09 14:18:20,634 | INFO | [Metrics-NN] R2=-664.411979 | MAE=1.092744 | RMSE=1.747913 | MAPE%=1632.075
+2025-09-09 14:18:20,666 | INFO | [Save] predictions_holdout_trial001.csv
+2025-09-09 14:18:20,670 | INFO | [Save] metrics_holdout_trial001.csv
+2025-09-09 14:18:20,673 | INFO | [Save] feature_importances_holdout_trial001.csv
+2025-09-09 14:18:20,675 | INFO | [Save] model_params_trial001.json
+2025-09-09 14:18:20,676 | INFO | [Done] trial=1 | outputs at: test/trial_001

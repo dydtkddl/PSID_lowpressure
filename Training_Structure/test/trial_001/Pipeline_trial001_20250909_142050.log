@@ -1,0 +1,36 @@
+2025-09-09 14:20:50,429 | INFO | [Data] Loaded: ../Data_collect/DataSet/He_313K/He_313K_He_313_0.01_to_He_313_5_dataset.csv | rows=10189 | cols=16
+2025-09-09 14:20:50,430 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-09 14:20:50,435 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 10189 -> 10189
+2025-09-09 14:20:50,438 | INFO | [Seeds] trial=1 | seeds={'seed': 43, 'seed_qt': 1042, 'seed_rd': 2042, 'model_seed': 3042}
+2025-09-09 14:20:50,440 | INFO | [S3 QT→RD] train(qt)=4076, train(rd)=4075, test=2038 (train_ratio=0.80, qt_frac_total=0.40, shift=0.000e+00)
+2025-09-09 14:20:51,400 | INFO | [Epoch 0] Train Loss=0.021224 | Val Loss=0.000529
+2025-09-09 14:20:51,505 | INFO | [Epoch 1] Train Loss=0.013319 | Val Loss=0.001322
+2025-09-09 14:20:51,593 | INFO | [Epoch 2] Train Loss=0.018508 | Val Loss=0.000665
+2025-09-09 14:20:51,687 | INFO | [Epoch 3] Train Loss=0.017187 | Val Loss=0.001499
+2025-09-09 14:20:51,771 | INFO | [Epoch 4] Train Loss=0.015751 | Val Loss=0.000115
+2025-09-09 14:20:51,858 | INFO | [Epoch 5] Train Loss=0.013063 | Val Loss=0.000038
+2025-09-09 14:20:51,946 | INFO | [Epoch 6] Train Loss=0.012868 | Val Loss=0.000031
+2025-09-09 14:20:52,062 | INFO | [Epoch 7] Train Loss=0.012427 | Val Loss=0.000068
+2025-09-09 14:20:52,163 | INFO | [Epoch 8] Train Loss=0.012366 | Val Loss=0.000073
+2025-09-09 14:20:52,264 | INFO | [Epoch 9] Train Loss=0.012295 | Val Loss=0.000035
+2025-09-09 14:20:52,362 | INFO | [Epoch 10] Train Loss=0.012199 | Val Loss=0.000188
+2025-09-09 14:20:52,462 | INFO | [Epoch 11] Train Loss=0.013695 | Val Loss=0.000034
+2025-09-09 14:20:52,553 | INFO | [Epoch 12] Train Loss=0.012896 | Val Loss=0.000099
+2025-09-09 14:20:52,642 | INFO | [Epoch 13] Train Loss=0.012495 | Val Loss=0.000026
+2025-09-09 14:20:52,740 | INFO | [Epoch 14] Train Loss=0.012190 | Val Loss=0.000083
+2025-09-09 14:20:52,830 | INFO | [Epoch 15] Train Loss=0.012119 | Val Loss=0.000026
+2025-09-09 14:20:52,929 | INFO | [Epoch 16] Train Loss=0.011903 | Val Loss=0.000025
+2025-09-09 14:20:53,018 | INFO | [Epoch 17] Train Loss=0.011999 | Val Loss=0.000193
+2025-09-09 14:20:53,118 | INFO | [Epoch 18] Train Loss=0.015360 | Val Loss=0.000027
+2025-09-09 14:20:53,216 | INFO | [Epoch 19] Train Loss=0.011867 | Val Loss=0.000043
+2025-09-09 14:20:53,301 | INFO | [Epoch 20] Train Loss=0.011727 | Val Loss=0.000209
+2025-09-09 14:20:53,392 | INFO | [Epoch 21] Train Loss=0.012807 | Val Loss=0.000340
+2025-09-09 14:20:53,480 | INFO | [Epoch 22] Train Loss=0.013078 | Val Loss=0.000502
+2025-09-09 14:20:53,576 | INFO | [Epoch 23] Train Loss=0.013475 | Val Loss=0.001137
+2025-09-09 14:20:53,672 | INFO | [EarlyStopping] Epoch 24: val_loss did not improve for 20 rounds. Stop training.
+2025-09-09 14:20:53,675 | INFO | [Metrics-NN] R2=0.905856 | MAE=0.010493 | RMSE=0.000247 | MAPE%=18.122
+2025-09-09 14:20:53,707 | INFO | [Save] predictions_holdout_trial001.csv
+2025-09-09 14:20:53,712 | INFO | [Save] metrics_holdout_trial001.csv
+2025-09-09 14:20:53,715 | INFO | [Save] feature_importances_holdout_trial001.csv
+2025-09-09 14:20:53,717 | INFO | [Save] model_params_trial001.json
+2025-09-09 14:20:53,718 | INFO | [Done] trial=1 | outputs at: test/trial_001

@@ -1,0 +1,21 @@
+name,gas,pressure,temp,cutoff,path,Average loading absolute [mol/kg framework],Average loading excess [mol/kg framework],Average loading absolute [molecules/unit cell],Average loading excess [molecules/unit cell]
+YERJEL_clean_DDEC,CO2,1.0,298.0,14.0,YERJEL_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+GIKMOD10_clean_DDEC,CO2,1.0,298.0,14.0,GIKMOD10_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+ZIKJIO_clean_DDEC,CO2,1.0,298.0,14.0,ZIKJIO_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+KETHEY02_clean_DDEC,CO2,1.0,298.0,14.0,KETHEY02_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+OCUGEZ01_clean_DDEC,CO2,1.0,298.0,14.0,OCUGEZ01_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+OTIPEO_clean_DDEC,CO2,1.0,298.0,14.0,OTIPEO_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+FATLUJ_clean_DDEC,CO2,1.0,298.0,14.0,FATLUJ_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+XAPCOJ_clean_DDEC,CO2,1.0,298.0,14.0,XAPCOJ_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+FINQOK_clean_DDEC,CO2,1.0,298.0,14.0,FINQOK_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+SOPPOD_clean_DDEC,CO2,1.0,298.0,14.0,SOPPOD_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+TUMROK_clean_DDEC,CO2,1.0,298.0,14.0,TUMROK_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+XAPGOK_clean_DDEC,CO2,1.0,298.0,14.0,XAPGOK_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+XAJQAC_SL_DDEC,CO2,1.0,298.0,14.0,XAJQAC_SL_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+WAQFIG_clean_DDEC,CO2,1.0,298.0,14.0,WAQFIG_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+PEPLOM_clean_DDEC,CO2,1.0,298.0,14.0,PEPLOM_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+JOXPIX_clean_DDEC,CO2,1.0,298.0,14.0,JOXPIX_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+XEWFAI_clean_DDEC,CO2,1.0,298.0,14.0,XEWFAI_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+HOVJIN_clean_DDEC,CO2,1.0,298.0,14.0,HOVJIN_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+FORKUU_clean_DDEC,CO2,1.0,298.0,14.0,FORKUU_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0
+NUYWOU_clean_DDEC,CO2,1.0,298.0,14.0,NUYWOU_clean_DDEC_CO2_298.0K_1.0bar_14.0/Output/System_0,0.0,0.0,0.0,0.0

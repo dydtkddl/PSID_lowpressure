@@ -1,0 +1,18 @@
+2025-09-09 14:12:43,366 | INFO | [Data] Loaded: ../Data_collect/DataSet/He_313K/He_313K_He_313_0.01_to_He_313_5_dataset.csv | rows=10189 | cols=16
+2025-09-09 14:12:43,368 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-09 14:12:43,371 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 10189 -> 10189
+2025-09-09 14:12:43,374 | INFO | [Seeds] trial=1 | seeds={'seed': 43, 'seed_qt': 1042, 'seed_rd': 2042, 'model_seed': 3042}
+2025-09-09 14:12:43,377 | INFO | [S3 QT→RD] train(qt)=4076, train(rd)=4075, test=2038 (train_ratio=0.80, qt_frac_total=0.40, shift=0.000e+00)
+2025-09-09 14:12:57,680 | INFO | [Metrics-NN] R2=-28.990360 | MAE=0.236179 | RMSE=0.078779 | MAPE%=337.317
+2025-09-09 14:12:57,684 | INFO | [Metrics_trial001] R2=-28.990360 | MAE=0.236179 | RMSE=0.078779 | MAPE%=337.317
+2025-09-09 14:12:57,685 | INFO | [Importance] Using permutation_importance
+2025-09-09 14:12:57,686 | WARNING | [Importance] fallback failed: The 'estimator' parameter of permutation_importance must be an object implementing 'fit'. Got SimpleMLP(
+  (net): Sequential(
+    (0): Linear(in_features=13, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=128, out_features=64, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=64, out_features=1, bias=True)
+  )
+) instead.
+2025-09-09 14:12:57,726 | INFO | [Save] predictions_holdout_trial001.csv
