@@ -1,0 +1,25 @@
+SimulationType                MonteCarlo
+NumberOfCycles                {NumberOfCycles}
+NumberOfInitializationCycles  {NumberOfInitializationCycles}
+PrintEvery                    {PrintEvery}
+RestartFile                   no
+
+Cutoff 12.5
+AddAtomNumberCodeToLabel yes
+Forcefield                     doi10_1038
+UseChargesFromCIFFile yes
+
+Framework 0
+FrameworkName {MOF}
+UnitCells {UNITCELL}
+ExternalTemperature    {TEMP}
+ExternalPressure    {PRESSURE}
+
+Component 0 MoleculeName             {GAS}
+            MoleculeDefinition       ExampleDefinitions
+            TranslationProbability   0.5
+            RotationProbability      0.5
+            ReinsertionProbability   0.5
+            SwapProbability          1.0
+            CreateNumberOfMolecules  0
+
