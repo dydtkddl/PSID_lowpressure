@@ -1,0 +1,47 @@
+import os
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+
+COREMOF = pd.read_csv("../2019-11-01-ASR-public_12020.csv")
+GROUP = pd.read_csv("../Grouped_Results/Ar_results_V4(rerun_applied).csv").drop('Unnamed: 0', axis=1)
+
+low = [0.01, 0.05, 0.1, 0.5]
+high = [1, 5, 15]
+T = 313
+
+for l in low:
+    for h in high:
+        l_column = f"Ar_{T}_{l}"
+        h_column = f"Ar_{T}_{h}"
+
+        # GROUP 부분
+        new_GROUP = GROUP.copy()[["MOF", l_column, h_column]].dropna()
+
+        # COREMOF 부분
+        COREMOF_ = COREMOF.copy()[[
+            'filename', 'LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g',
+            'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS'
+        ]]
+
+        # 병합
+        MERGED = pd.merge(
+            COREMOF_, new_GROUP,
+            left_on="filename", right_on="MOF", how="inner"
+        )
+
+        # Has_OMS 인코딩
+        encoder = LabelEncoder()
+        MERGED["Has_OMS"] = encoder.fit_transform(MERGED["Has_OMS"])
+
+        # 컬럼명 교체
+        MERGED = MERGED.rename(columns={
+            "MOF": "name",
+            l_column: "Input",
+            h_column: "Output"
+        })
+
+        # 파일명
+        out_name = f"Ar_{T}K_Ar_{T}_{l}_to_Ar_{T}_{h}_dataset.csv"
+        MERGED.to_csv(out_name, index=False)
+
+        print(f"[Saved] {out_name} | shape={MERGED.shape}")
