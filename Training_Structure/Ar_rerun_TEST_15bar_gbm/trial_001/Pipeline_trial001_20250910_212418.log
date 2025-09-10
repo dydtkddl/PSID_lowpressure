@@ -1,0 +1,45 @@
+2025-09-10 21:24:18,743 | INFO | [Data] Loaded: ../Data_collect/DataSet/Ar_313K/Ar_313K_Ar_313_0.01_to_Ar_313_15_dataset.csv | rows=7760 | cols=17
+2025-09-10 21:24:18,744 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-10 21:24:18,746 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 7760 -> 7760
+2025-09-10 21:24:18,746 | INFO | [Data] Loaded: ../Data_collect/DataSet/Ar_313K/Ar_313K_Ar_313_0.01_to_Ar_313_15_dataset.csv | rows=7760 | cols=17
+2025-09-10 21:24:18,747 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-10 21:24:18,748 | INFO | [Seeds] trial=1 | seeds={'seed': 53, 'seed_qt': 1052, 'seed_rd': 2052, 'model_seed': 3052}
+2025-09-10 21:24:18,748 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 7760 -> 7760
+2025-09-10 21:24:18,749 | INFO | [S1 Random-Struct] train=6208 / test=1552 (ratio=0.80)
+2025-09-10 21:24:18,749 | INFO | [Data] Loaded: ../Data_collect/DataSet/Ar_313K/Ar_313K_Ar_313_0.01_to_Ar_313_15_dataset.csv | rows=7760 | cols=17
+2025-09-10 21:24:18,749 | INFO | [Features] Using 12 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS']
+2025-09-10 21:24:18,750 | INFO | [Seeds] trial=1 | seeds={'seed': 53, 'seed_qt': 1052, 'seed_rd': 2052, 'model_seed': 3052}
+2025-09-10 21:24:18,750 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 7760 -> 7760
+2025-09-10 21:24:18,752 | INFO | [S3 QT→RD] train(qt)=3104, train(rd)=3104, test=1552 (train_ratio=0.80, qt_frac_total=0.40, shift=0.000e+00)
+2025-09-10 21:24:18,752 | INFO | [Seeds] trial=1 | seeds={'seed': 53, 'seed_qt': 1052, 'seed_rd': 2052, 'model_seed': 3052}
+2025-09-10 21:24:18,753 | INFO | [S1 Random-Struct] train=6208 / test=1552 (ratio=0.80)
+2025-09-10 21:24:18,759 | INFO | [Model] kind=gbm | params={'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.05, 'loss': 'squared_error', 'max_depth': 5, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 500, 'n_iter_no_change': None, 'random_state': 3052, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2025-09-10 21:24:18,759 | INFO | [Holdout_trial001] Train=6208 | Test=1552
+2025-09-10 21:24:18,764 | INFO | [Model] kind=gbm | params={'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.05, 'loss': 'squared_error', 'max_depth': 5, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 500, 'n_iter_no_change': None, 'random_state': 3052, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2025-09-10 21:24:18,764 | INFO | [Holdout_trial001] Train=6208 | Test=1552
+2025-09-10 21:24:18,764 | INFO | [Model] kind=gbm | params={'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.05, 'loss': 'squared_error', 'max_depth': 5, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 500, 'n_iter_no_change': None, 'random_state': 3052, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2025-09-10 21:24:18,764 | INFO | [Holdout_trial001] Train=6208 | Test=1552
+2025-09-10 21:24:32,753 | INFO | [Timing_trial001] fit_time=13.989s
+2025-09-10 21:24:32,765 | INFO | [Timing_trial001] predict_time=0.012s
+2025-09-10 21:24:32,768 | INFO | [Metrics_trial001] R2=0.678610 | MAE=0.455804 | RMSE=0.425048 | MAPE%=24.163
+2025-09-10 21:24:32,786 | INFO | [Save] predictions_holdout_trial001.csv
+2025-09-10 21:24:32,787 | INFO | [Save] metrics_holdout_trial001.csv
+2025-09-10 21:24:32,788 | INFO | [Save] feature_importances_holdout_trial001.csv
+2025-09-10 21:24:32,788 | INFO | [Save] model_params_trial001.json
+2025-09-10 21:24:32,788 | INFO | [Done] trial=1 | outputs at: Ar_rerun_TEST_15bar_gbm/trial_001
+2025-09-10 21:24:34,041 | INFO | [Timing_trial001] fit_time=15.277s
+2025-09-10 21:24:34,054 | INFO | [Timing_trial001] predict_time=0.012s
+2025-09-10 21:24:34,056 | INFO | [Metrics_trial001] R2=0.946767 | MAE=0.147144 | RMSE=0.053845 | MAPE%=6.146
+2025-09-10 21:24:34,075 | INFO | [Save] predictions_holdout_trial001.csv
+2025-09-10 21:24:34,076 | INFO | [Save] metrics_holdout_trial001.csv
+2025-09-10 21:24:34,077 | INFO | [Save] feature_importances_holdout_trial001.csv
+2025-09-10 21:24:34,077 | INFO | [Save] model_params_trial001.json
+2025-09-10 21:24:34,077 | INFO | [Done] trial=1 | outputs at: Ar_rerun_TEST_15bar_gbm/trial_001
+2025-09-10 21:24:34,711 | INFO | [Timing_trial001] fit_time=15.952s
+2025-09-10 21:24:34,724 | INFO | [Timing_trial001] predict_time=0.013s
+2025-09-10 21:24:34,727 | INFO | [Metrics_trial001] R2=0.950158 | MAE=0.144687 | RMSE=0.065917 | MAPE%=6.177
+2025-09-10 21:24:34,747 | INFO | [Save] predictions_holdout_trial001.csv
+2025-09-10 21:24:34,748 | INFO | [Save] metrics_holdout_trial001.csv
+2025-09-10 21:24:34,749 | INFO | [Save] feature_importances_holdout_trial001.csv
+2025-09-10 21:24:34,749 | INFO | [Save] model_params_trial001.json
+2025-09-10 21:24:34,749 | INFO | [Done] trial=1 | outputs at: Ar_rerun_TEST_15bar_gbm/trial_001
