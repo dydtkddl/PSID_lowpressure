@@ -1,0 +1,3 @@
+acs.cgd.5b01554_VAGNUP1452791_clean_argon_293.0K_0.01bar_14.0
+acs.cgd.5b01554_VAGNUP1452791_clean_COREMOF_noindex_argon_293.0K_0.01bar_14.0
+acs.cgd.5b01554_VAGNUP1452791_clean_COREMOF_argon_293.0K_0.01bar_14.0

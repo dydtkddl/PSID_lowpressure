@@ -1,0 +1,10 @@
+---- START at 2025-09-10 20:10:46, Target=8/8 ----
+[1/8] try02 FAILED: Command '/home/yongsang/PSID_SIMULATION_TOOLS/RASPA/bin/simulate simulation.input' died with <Signals.SIGSEGV: 11>.
+[4/8] try04 FAILED: Command '/home/yongsang/PSID_SIMULATION_TOOLS/RASPA/bin/simulate simulation.input' died with <Signals.SIGSEGV: 11>.
+[5/8] try03 FAILED: Command '/home/yongsang/PSID_SIMULATION_TOOLS/RASPA/bin/simulate simulation.input' died with <Signals.SIGSEGV: 11>.
+[3/8] acs.cgd.5b01554_VAGNUP1452791_clean_argon_293.0K_0.01bar_14.0 Done. TimeForThis=79.9s, Completed=1/8, ETA=2025-09-10 20:21:25
+[7/8] __pycache__ FAILED: Command '/home/yongsang/PSID_SIMULATION_TOOLS/RASPA/bin/simulate simulation.input' died with <Signals.SIGSEGV: 11>.
+[8/8] try01 FAILED: Command '/home/yongsang/PSID_SIMULATION_TOOLS/RASPA/bin/simulate simulation.input' died with <Signals.SIGSEGV: 11>.
+[6/8] acs.cgd.5b01554_VAGNUP1452791_clean_COREMOF_noindex_argon_293.0K_0.01bar_14.0 Done. TimeForThis=80.0s, Completed=2/8, ETA=2025-09-10 20:16:08
+[2/8] acs.cgd.5b01554_VAGNUP1452791_clean_COREMOF_argon_293.0K_0.01bar_14.0 Done. TimeForThis=105.9s, Completed=3/8, ETA=2025-09-10 20:15:28
+---- ALL DONE at 2025-09-10 20:12:32 ----
