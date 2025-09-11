@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 # === 설정 ===
 DATA_ROOT = Path("../Data_collect/DataSet")  # 데이터셋 루트
-OUT_ROOT = Path("./try05")
+OUT_ROOT = Path("./try06_struct+input_qt_then_rd")
 OUT_ROOT.mkdir(exist_ok=True)
 
 GASES = ["Ar", "He", "N2", "O2", "CO2", "H2"]
@@ -15,8 +15,8 @@ INPUTS = ["Henry", 0.01, 0.05, 0.1, 0.5]
 OUTPUTS = [1, 5, 15]
 
 FEATURES_SAMPLER_COMBOS = [
-    ("struct", "random_struct"),
-    ("struct+input", "random_struct"),
+#    ("struct", "random_struct"),
+#    ("struct+input", "random_struct"),
     ("struct+input", "qt_then_rd"),
 ]
 MODELS = ["rf", "gbm", "cat"]
