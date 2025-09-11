@@ -1,0 +1,15 @@
+2025-09-12 00:21:57,215 | INFO | [Data] Loaded: ../Data_collect/DataSet/He_313K/He_313K_He_313_0.01_to_He_313_5_dataset.csv | rows=10181 | cols=16
+2025-09-12 00:21:57,216 | INFO | [Features] Using 12 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS']
+2025-09-12 00:21:57,217 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 10181 -> 10181
+2025-09-12 00:21:57,219 | INFO | [Seeds] trial=2 | seeds={'seed': 44, 'seed_qt': 2042, 'seed_rd': 4042, 'model_seed': 6042}
+2025-09-12 00:21:57,220 | INFO | [S1 Random-Struct] train=8145 / test=2036 (ratio=0.80)
+2025-09-12 00:21:57,232 | INFO | [Model] kind=rf | params={'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'squared_error', 'max_depth': None, 'max_features': 1.0, 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 800, 'n_jobs': -1, 'oob_score': False, 'random_state': 6042, 'verbose': 0, 'warm_start': False}
+2025-09-12 00:21:57,232 | INFO | [Holdout_trial002] Train=8145 | Test=2036
+2025-09-12 00:22:47,066 | INFO | [Timing_trial002] fit_time=49.833s
+2025-09-12 00:22:47,497 | INFO | [Timing_trial002] predict_time=0.431s
+2025-09-12 00:22:47,500 | INFO | [Metrics_trial002] R2=0.988769 | MAE=0.005242 | RMSE=0.000072 | MAPE%=10.277
+2025-09-12 00:22:47,692 | INFO | [Save] predictions_holdout_trial002.csv
+2025-09-12 00:22:47,693 | INFO | [Save] metrics_holdout_trial002.csv
+2025-09-12 00:22:47,693 | INFO | [Save] feature_importances_holdout_trial002.csv
+2025-09-12 00:22:47,694 | INFO | [Save] model_params_trial002.json
+2025-09-12 00:22:47,694 | INFO | [Done] trial=2 | outputs at: try06_struct_re/He_313_0.01_to_5__struct__random_struct__rf/trial_002
