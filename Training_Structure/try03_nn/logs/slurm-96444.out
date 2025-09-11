@@ -1,0 +1,15 @@
+/data/dydtkddhkdwk/PSID_LOWPRESSURE_NN
+[2025-09-10 14:40:01] [Device] Using cuda
+[2025-09-10 14:40:01] [Sampler] random_struct | Train=8144 | Test=2037
+[2025-09-10 14:40:03] [Epoch 10] Train Loss=0.047342 | Val Loss=0.083145
+[2025-09-10 14:40:04] [Epoch 20] Train Loss=0.043047 | Val Loss=0.055391
+[2025-09-10 14:40:06] [Epoch 30] Train Loss=0.041746 | Val Loss=0.059445
+[2025-09-10 14:40:07] [Epoch 40] Train Loss=0.038093 | Val Loss=0.063705
+[2025-09-10 14:40:08] [EarlyStopping] Epoch 48: no improvement for 20 epochs.
+[2025-09-10 14:40:08] [Timing] fit_time=6.261s
+[2025-09-10 14:40:08] [Timing] predict_time=0.001s
+[2025-09-10 14:40:08] [Metrics] R2=0.911910 | MAE=0.006502 | RMSE=0.029333
+[2025-09-10 14:40:08] [Save] predictions_trial001.csv
+[2025-09-10 14:40:08] [Save] metrics_trial001.csv
+[2025-09-10 14:40:08] [Save] params_trial001.json
+Removed 8 rows from mis_lis

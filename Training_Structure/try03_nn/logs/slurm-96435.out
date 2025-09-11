@@ -1,0 +1,8 @@
+/data/dydtkddhkdwk/PSID_LOWPRESSURE_NN
+usage: train_nn_gpu.py [-h] --data DATA [--outdir OUTDIR] [--trial TRIAL]
+                       [--sampler {random_struct,random_with_input,qt_then_rd}]
+                       [--train-ratio TRAIN_RATIO] [--qt-frac QT_FRAC]
+                       [--n-bins N_BINS] [--gamma GAMMA] [--hidden1 HIDDEN1]
+                       [--hidden2 HIDDEN2] [--lr LR] [--batch-size BATCH_SIZE]
+                       [--epochs EPOCHS] [--patience PATIENCE] [--delta DELTA]
+train_nn_gpu.py: error: unrecognized arguments: exit 0

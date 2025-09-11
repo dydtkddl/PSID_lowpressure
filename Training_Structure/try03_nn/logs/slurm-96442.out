@@ -1,0 +1,18 @@
+/data/dydtkddhkdwk/PSID_LOWPRESSURE_NN
+[2025-09-10 14:37:29] [Device] Using cuda
+[2025-09-10 14:37:29] [Sampler] qt_then_rd | Train=7929 | qt=3857 | rd=4072 | Test=2252
+[2025-09-10 14:37:31] [Epoch 10] Train Loss=0.016657 | Val Loss=0.015092
+[2025-09-10 14:37:32] [Epoch 20] Train Loss=0.014135 | Val Loss=0.014139
+[2025-09-10 14:37:34] [Epoch 30] Train Loss=0.013233 | Val Loss=0.013561
+[2025-09-10 14:37:35] [Epoch 40] Train Loss=0.013609 | Val Loss=0.014893
+[2025-09-10 14:37:36] [Epoch 50] Train Loss=0.013136 | Val Loss=0.014231
+[2025-09-10 14:37:37] [Epoch 60] Train Loss=0.012895 | Val Loss=0.013760
+[2025-09-10 14:37:38] [EarlyStopping] Epoch 65: no improvement for 20 epochs.
+[2025-09-10 14:37:38] [Timing] fit_time=8.073s
+[2025-09-10 14:37:38] [Timing] predict_time=0.001s
+[2025-09-10 14:37:38] [Metrics] R2=0.987788 | MAE=0.004148 | RMSE=0.005653
+[2025-09-10 14:37:38] [Save] predictions_trial001.csv
+[2025-09-10 14:37:38] [Save] metrics_trial001.csv
+[2025-09-10 14:37:38] [Save] params_trial001.json
+Removed 8 rows from mis_lis
+/var/spool/slurm/d/job96442/slurm_script: line 19: --sampler: command not found

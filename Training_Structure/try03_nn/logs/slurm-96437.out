@@ -1,0 +1,24 @@
+/data/dydtkddhkdwk/PSID_LOWPRESSURE_NN
+[2025-09-10 14:31:26] [Device] Using cuda
+[2025-09-10 14:31:26] [Sampler] qt_then_rd | Train=7929 | Test=2252
+[2025-09-10 14:31:28] [Epoch 10] Train Loss=0.015918 | Val Loss=0.014530
+[2025-09-10 14:31:29] [Epoch 20] Train Loss=0.014190 | Val Loss=0.014142
+[2025-09-10 14:31:31] [Epoch 30] Train Loss=0.013661 | Val Loss=0.013899
+[2025-09-10 14:31:32] [Epoch 40] Train Loss=0.016426 | Val Loss=0.014374
+[2025-09-10 14:31:33] [Epoch 50] Train Loss=0.012894 | Val Loss=0.014506
+[2025-09-10 14:31:34] [Epoch 60] Train Loss=0.012662 | Val Loss=0.014262
+[2025-09-10 14:31:36] [Epoch 70] Train Loss=0.012531 | Val Loss=0.013839
+[2025-09-10 14:31:37] [Epoch 80] Train Loss=0.012292 | Val Loss=0.014240
+[2025-09-10 14:31:37] [EarlyStopping] Epoch 81: no improvement for 20 epochs.
+[2025-09-10 14:31:37] [Timing] fit_time=10.214s
+[2025-09-10 14:31:37] [Timing] predict_time=0.002s
+Removed 8 rows from mis_lis
+Traceback (most recent call last):
+  File "/data/dydtkddhkdwk/PSID_LOWPRESSURE_NN/train_nn_gpu.py", line 301, in <module>
+    main()
+  File "/data/dydtkddhkdwk/PSID_LOWPRESSURE_NN/train_nn_gpu.py", line 291, in main
+    train_and_evaluate(X, y,
+  File "/data/dydtkddhkdwk/PSID_LOWPRESSURE_NN/train_nn_gpu.py", line 222, in train_and_evaluate
+    y_test_inv = y_scaler.inverse_transform(y_test.cpu().numpy().reshape(-1, 1)).ravel()
+                                            ^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'cpu'
