@@ -1,0 +1,5 @@
+2025-09-11 14:40:54,339 | INFO | [Data] Loaded: ../Data_collect/DataSet/Ar_273K/Ar_273K_Ar_273_0.5_to_Ar_273_15_dataset.csv | rows=7758 | cols=16
+2025-09-11 14:40:54,340 | INFO | [Features] Using 12 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS']
+2025-09-11 14:40:54,344 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 7758 -> 7758
+2025-09-11 14:40:54,347 | INFO | [Seeds] trial=3 | seeds={'seed': 45, 'seed_qt': 3042, 'seed_rd': 6042, 'model_seed': 9042}
+2025-09-11 14:40:54,350 | INFO | [S1 Random-Struct] train=6206 / test=1552 (ratio=0.80)
