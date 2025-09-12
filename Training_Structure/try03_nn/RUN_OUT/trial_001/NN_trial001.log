@@ -118,3 +118,197 @@
 [2025-09-10 14:40:08] [Save] predictions_trial001.csv
 [2025-09-10 14:40:08] [Save] metrics_trial001.csv
 [2025-09-10 14:40:08] [Save] params_trial001.json
+[2025-09-12 01:29:31] [Device] Using cpu
+[2025-09-12 01:29:31] [Sampler] qt_then_rd | Train=7954 | qt=3882 | rd=4072 | Test=2227
+[2025-09-12 01:29:33] [Epoch 10] Train Loss=0.004180 | Val Loss=0.003857
+[2025-09-12 01:29:34] [Epoch 20] Train Loss=0.003623 | Val Loss=0.003547
+[2025-09-12 01:29:35] [Epoch 30] Train Loss=0.003352 | Val Loss=0.003155
+[2025-09-12 01:29:37] [Epoch 40] Train Loss=0.005560 | Val Loss=0.003224
+[2025-09-12 01:29:38] [Epoch 50] Train Loss=0.003328 | Val Loss=0.003025
+[2025-09-12 01:29:39] [Epoch 60] Train Loss=0.003094 | Val Loss=0.002933
+[2025-09-12 01:29:40] [Epoch 70] Train Loss=0.002812 | Val Loss=0.003005
+[2025-09-12 01:29:41] [Epoch 80] Train Loss=0.002955 | Val Loss=0.002833
+[2025-09-12 01:29:43] [Epoch 90] Train Loss=0.002492 | Val Loss=0.002681
+[2025-09-12 01:29:43] [EarlyStopping] Epoch 93: no improvement for 20 epochs.
+[2025-09-12 01:29:43] [Timing] fit_time=11.285s
+[2025-09-12 01:29:43] [Timing] predict_time=0.002s
+[2025-09-12 01:29:43] [Metrics] R2=0.995284 | MAE=0.007837 | RMSE=0.012058
+[2025-09-12 01:29:43] [Save] predictions_trial001.csv
+[2025-09-12 01:29:43] [Save] metrics_trial001.csv
+[2025-09-12 01:29:43] [Save] params_trial001.json
+[2025-09-12 01:30:37] [Device] Using cpu
+[2025-09-12 01:30:37] [Sampler] qt_then_rd | Train=5971 | qt=2868 | rd=3103 | Test=1787
+[2025-09-12 01:30:39] [Epoch 10] Train Loss=0.044591 | Val Loss=0.052362
+[2025-09-12 01:30:40] [Epoch 20] Train Loss=0.038004 | Val Loss=0.045591
+[2025-09-12 01:30:41] [Epoch 30] Train Loss=0.049520 | Val Loss=0.046257
+[2025-09-12 01:30:42] [Epoch 40] Train Loss=0.033747 | Val Loss=0.040132
+[2025-09-12 01:30:43] [EarlyStopping] Epoch 49: no improvement for 20 epochs.
+[2025-09-12 01:30:43] [Timing] fit_time=4.507s
+[2025-09-12 01:30:43] [Timing] predict_time=0.002s
+[2025-09-12 01:30:43] [Metrics] R2=0.935126 | MAE=0.293168 | RMSE=0.410234
+[2025-09-12 01:30:43] [Save] predictions_trial001.csv
+[2025-09-12 01:30:43] [Save] metrics_trial001.csv
+[2025-09-12 01:30:43] [Save] params_trial001.json
+[2025-09-12 01:31:23] [Device] Using cpu
+[2025-09-12 01:31:23] [Sampler] qt_then_rd | Train=5971 | qt=2868 | rd=3103 | Test=1787
+[2025-09-12 01:31:25] [Epoch 10] Train Loss=0.039963 | Val Loss=0.043784
+[2025-09-12 01:31:26] [Epoch 20] Train Loss=0.041870 | Val Loss=0.042133
+[2025-09-12 01:31:27] [Epoch 30] Train Loss=0.031377 | Val Loss=0.040140
+[2025-09-12 01:31:27] [Epoch 40] Train Loss=0.040798 | Val Loss=0.039310
+[2025-09-12 01:31:28] [Epoch 50] Train Loss=0.026987 | Val Loss=0.034617
+[2025-09-12 01:31:29] [Epoch 60] Train Loss=0.025628 | Val Loss=0.034648
+[2025-09-12 01:31:30] [Epoch 70] Train Loss=0.026043 | Val Loss=0.036174
+[2025-09-12 01:31:31] [Epoch 80] Train Loss=0.023976 | Val Loss=0.030713
+[2025-09-12 01:31:32] [Epoch 90] Train Loss=0.022892 | Val Loss=0.032310
+[2025-09-12 01:31:33] [Epoch 100] Train Loss=0.022127 | Val Loss=0.034118
+[2025-09-12 01:31:33] [Timing] fit_time=9.702s
+[2025-09-12 01:31:33] [Timing] predict_time=0.003s
+[2025-09-12 01:31:33] [Metrics] R2=0.930460 | MAE=0.304313 | RMSE=0.424729
+[2025-09-12 01:31:33] [Save] predictions_trial001.csv
+[2025-09-12 01:31:33] [Save] metrics_trial001.csv
+[2025-09-12 01:31:33] [Save] params_trial001.json
+[2025-09-12 01:32:23] [Device] Using cpu
+[2025-09-12 01:32:23] [Sampler] qt_then_rd | Train=5913 | qt=2809 | rd=3104 | Test=1847
+[2025-09-12 01:32:25] [Epoch 10] Train Loss=0.069043 | Val Loss=0.081670
+[2025-09-12 01:32:26] [Epoch 20] Train Loss=0.063213 | Val Loss=0.075039
+[2025-09-12 01:32:27] [Epoch 30] Train Loss=0.058293 | Val Loss=0.072596
+[2025-09-12 01:32:28] [Epoch 40] Train Loss=0.058372 | Val Loss=0.070038
+[2025-09-12 01:32:29] [Epoch 50] Train Loss=0.055905 | Val Loss=0.070921
+[2025-09-12 01:32:30] [Epoch 60] Train Loss=0.051561 | Val Loss=0.068610
+[2025-09-12 01:32:30] [EarlyStopping] Epoch 66: no improvement for 20 epochs.
+[2025-09-12 01:32:30] [Timing] fit_time=6.520s
+[2025-09-12 01:32:30] [Timing] predict_time=0.002s
+[2025-09-12 01:32:30] [Metrics] R2=0.862941 | MAE=0.289849 | RMSE=0.404417
+[2025-09-12 01:32:30] [Save] predictions_trial001.csv
+[2025-09-12 01:32:30] [Save] metrics_trial001.csv
+[2025-09-12 01:32:30] [Save] params_trial001.json
+[2025-09-12 01:35:19] [Device] Using cpu
+[2025-09-12 01:35:19] [Sampler] qt_then_rd | Train=5913 | qt=2809 | rd=3104 | Test=1847
+[2025-09-12 01:35:20] [Epoch 10] Train Loss=0.069050 | Val Loss=0.077771
+[2025-09-12 01:35:22] [Epoch 20] Train Loss=0.064005 | Val Loss=0.072769
+[2025-09-12 01:35:23] [Epoch 30] Train Loss=0.059126 | Val Loss=0.075564
+[2025-09-12 01:35:24] [Epoch 40] Train Loss=0.057571 | Val Loss=0.080197
+[2025-09-12 01:35:25] [Epoch 50] Train Loss=0.053586 | Val Loss=0.070367
+[2025-09-12 01:35:26] [Epoch 60] Train Loss=0.053056 | Val Loss=0.073131
+[2025-09-12 01:35:27] [Epoch 70] Train Loss=0.050072 | Val Loss=0.079109
+[2025-09-12 01:35:27] [EarlyStopping] Epoch 70: no improvement for 20 epochs.
+[2025-09-12 01:35:27] [Timing] fit_time=7.971s
+[2025-09-12 01:35:27] [Timing] predict_time=0.001s
+[2025-09-12 01:35:27] [Metrics] R2=0.871914 | MAE=0.293172 | RMSE=0.390956
+[2025-09-12 01:35:27] [Save] predictions_trial001.csv
+[2025-09-12 01:35:27] [Save] metrics_trial001.csv
+[2025-09-12 01:35:27] [Save] params_trial001.json
+[2025-09-12 01:35:40] [Device] Using cpu
+[2025-09-12 01:35:40] [Sampler] qt_then_rd | Train=7954 | qt=3882 | rd=4072 | Test=2227
+[2025-09-12 01:35:42] [Epoch 10] Train Loss=0.004213 | Val Loss=0.003633
+[2025-09-12 01:35:43] [Epoch 20] Train Loss=0.003607 | Val Loss=0.003299
+[2025-09-12 01:35:45] [Epoch 30] Train Loss=0.003524 | Val Loss=0.003087
+[2025-09-12 01:35:46] [Epoch 40] Train Loss=0.003271 | Val Loss=0.003171
+[2025-09-12 01:35:47] [Epoch 50] Train Loss=0.003167 | Val Loss=0.003151
+[2025-09-12 01:35:49] [Epoch 60] Train Loss=0.002868 | Val Loss=0.002615
+[2025-09-12 01:35:50] [Epoch 70] Train Loss=0.002765 | Val Loss=0.003286
+[2025-09-12 01:35:50] [EarlyStopping] Epoch 72: no improvement for 20 epochs.
+[2025-09-12 01:35:50] [Timing] fit_time=9.810s
+[2025-09-12 01:35:50] [Timing] predict_time=0.002s
+[2025-09-12 01:35:50] [Metrics] R2=0.994708 | MAE=0.008520 | RMSE=0.012773
+[2025-09-12 01:35:50] [Save] predictions_trial001.csv
+[2025-09-12 01:35:50] [Save] metrics_trial001.csv
+[2025-09-12 01:35:50] [Save] params_trial001.json
+[2025-09-12 01:36:16] [Device] Using cpu
+[2025-09-12 01:36:16] [Sampler] qt_then_rd | Train=5971 | qt=2868 | rd=3103 | Test=1787
+[2025-09-12 01:36:18] [Epoch 10] Train Loss=0.039583 | Val Loss=0.046284
+[2025-09-12 01:36:19] [Epoch 20] Train Loss=0.035718 | Val Loss=0.044106
+[2025-09-12 01:36:20] [Epoch 30] Train Loss=0.032939 | Val Loss=0.038013
+[2025-09-12 01:36:21] [Epoch 40] Train Loss=0.029629 | Val Loss=0.037492
+[2025-09-12 01:36:22] [Epoch 50] Train Loss=0.027535 | Val Loss=0.033986
+[2025-09-12 01:36:23] [Epoch 60] Train Loss=0.026223 | Val Loss=0.031789
+[2025-09-12 01:36:24] [Epoch 70] Train Loss=0.024733 | Val Loss=0.031502
+[2025-09-12 01:36:26] [Epoch 80] Train Loss=0.023412 | Val Loss=0.031314
+[2025-09-12 01:36:27] [Epoch 90] Train Loss=0.021654 | Val Loss=0.029562
+[2025-09-12 01:36:27] [EarlyStopping] Epoch 94: no improvement for 20 epochs.
+[2025-09-12 01:36:27] [Timing] fit_time=10.599s
+[2025-09-12 01:36:27] [Timing] predict_time=0.003s
+[2025-09-12 01:36:27] [Metrics] R2=0.941626 | MAE=0.267284 | RMSE=0.389139
+[2025-09-12 01:36:27] [Save] predictions_trial001.csv
+[2025-09-12 01:36:27] [Save] metrics_trial001.csv
+[2025-09-12 01:36:27] [Save] params_trial001.json
+[2025-09-12 01:37:20] [Device] Using cpu
+[2025-09-12 01:37:20] [Sampler] qt_then_rd | Train=5971 | qt=2868 | rd=3103 | Test=1787
+[2025-09-12 01:37:22] [Epoch 10] Train Loss=0.039526 | Val Loss=0.046783
+[2025-09-12 01:37:23] [Epoch 20] Train Loss=0.034941 | Val Loss=0.040632
+[2025-09-12 01:37:25] [Epoch 30] Train Loss=0.031930 | Val Loss=0.036634
+[2025-09-12 01:37:26] [Epoch 40] Train Loss=0.027764 | Val Loss=0.040863
+[2025-09-12 01:37:27] [Epoch 50] Train Loss=0.027037 | Val Loss=0.032401
+[2025-09-12 01:37:29] [Epoch 60] Train Loss=0.024158 | Val Loss=0.031664
+[2025-09-12 01:37:30] [Epoch 70] Train Loss=0.023308 | Val Loss=0.030340
+[2025-09-12 01:37:31] [Epoch 80] Train Loss=0.020941 | Val Loss=0.031147
+[2025-09-12 01:37:32] [Epoch 90] Train Loss=0.020310 | Val Loss=0.031433
+[2025-09-12 01:37:33] [EarlyStopping] Epoch 96: no improvement for 20 epochs.
+[2025-09-12 01:37:33] [Timing] fit_time=12.396s
+[2025-09-12 01:37:33] [Timing] predict_time=0.004s
+[2025-09-12 01:37:33] [Metrics] R2=0.936228 | MAE=0.275559 | RMSE=0.406735
+[2025-09-12 01:37:33] [Save] predictions_trial001.csv
+[2025-09-12 01:37:33] [Save] metrics_trial001.csv
+[2025-09-12 01:37:33] [Save] params_trial001.json
+[2025-09-12 01:37:50] [Device] Using cpu
+[2025-09-12 01:37:50] [Sampler] qt_then_rd | Train=5971 | qt=2868 | rd=3103 | Test=1787
+[2025-09-12 01:37:52] [Epoch 10] Train Loss=0.039476 | Val Loss=0.043005
+[2025-09-12 01:37:53] [Epoch 20] Train Loss=0.033038 | Val Loss=0.038528
+[2025-09-12 01:37:55] [Epoch 30] Train Loss=0.029921 | Val Loss=0.033011
+[2025-09-12 01:37:56] [Epoch 40] Train Loss=0.028986 | Val Loss=0.031878
+[2025-09-12 01:37:58] [Epoch 50] Train Loss=0.024083 | Val Loss=0.030238
+[2025-09-12 01:37:59] [Epoch 60] Train Loss=0.022522 | Val Loss=0.031471
+[2025-09-12 01:38:00] [EarlyStopping] Epoch 64: no improvement for 20 epochs.
+[2025-09-12 01:38:00] [Timing] fit_time=9.475s
+[2025-09-12 01:38:00] [Timing] predict_time=0.005s
+[2025-09-12 01:38:00] [Metrics] R2=0.942865 | MAE=0.269335 | RMSE=0.384988
+[2025-09-12 01:38:00] [Save] predictions_trial001.csv
+[2025-09-12 01:38:00] [Save] metrics_trial001.csv
+[2025-09-12 01:38:00] [Save] params_trial001.json
+[2025-09-12 01:38:14] [Device] Using cpu
+[2025-09-12 01:38:14] [Sampler] qt_then_rd | Train=5971 | qt=2868 | rd=3103 | Test=1787
+[2025-09-12 01:38:16] [Epoch 10] Train Loss=0.037845 | Val Loss=0.042828
+[2025-09-12 01:38:18] [Epoch 20] Train Loss=0.030966 | Val Loss=0.036944
+[2025-09-12 01:38:19] [Epoch 30] Train Loss=0.027721 | Val Loss=0.035039
+[2025-09-12 01:38:21] [Epoch 40] Train Loss=0.025900 | Val Loss=0.032560
+[2025-09-12 01:38:22] [Epoch 50] Train Loss=0.026424 | Val Loss=0.029648
+[2025-09-12 01:38:24] [Epoch 60] Train Loss=0.021533 | Val Loss=0.029767
+[2025-09-12 01:38:26] [Epoch 70] Train Loss=0.019480 | Val Loss=0.031421
+[2025-09-12 01:38:27] [Epoch 80] Train Loss=0.020133 | Val Loss=0.030438
+[2025-09-12 01:38:29] [Epoch 90] Train Loss=0.017012 | Val Loss=0.028516
+[2025-09-12 01:38:29] [EarlyStopping] Epoch 92: no improvement for 20 epochs.
+[2025-09-12 01:38:29] [Timing] fit_time=15.104s
+[2025-09-12 01:38:29] [Timing] predict_time=0.008s
+[2025-09-12 01:38:29] [Metrics] R2=0.944128 | MAE=0.267009 | RMSE=0.380710
+[2025-09-12 01:38:29] [Save] predictions_trial001.csv
+[2025-09-12 01:38:29] [Save] metrics_trial001.csv
+[2025-09-12 01:38:29] [Save] params_trial001.json
+[2025-09-12 01:39:18] [Device] Using cpu
+[2025-09-12 01:39:18] [Sampler] qt_then_rd | Train=7954 | qt=3882 | rd=4072 | Test=2227
+[2025-09-12 01:39:20] [Epoch 10] Train Loss=0.003706 | Val Loss=0.004264
+[2025-09-12 01:39:23] [Epoch 20] Train Loss=0.003012 | Val Loss=0.004106
+[2025-09-12 01:39:25] [Epoch 30] Train Loss=0.002684 | Val Loss=0.002736
+[2025-09-12 01:39:27] [Epoch 40] Train Loss=0.002488 | Val Loss=0.002791
+[2025-09-12 01:39:29] [Epoch 50] Train Loss=0.003317 | Val Loss=0.002698
+[2025-09-12 01:39:32] [Epoch 60] Train Loss=0.002503 | Val Loss=0.002986
+[2025-09-12 01:39:34] [EarlyStopping] Epoch 69: no improvement for 20 epochs.
+[2025-09-12 01:39:34] [Timing] fit_time=15.213s
+[2025-09-12 01:39:34] [Timing] predict_time=0.010s
+[2025-09-12 01:39:34] [Metrics] R2=0.995713 | MAE=0.007501 | RMSE=0.011496
+[2025-09-12 01:39:34] [Save] predictions_trial001.csv
+[2025-09-12 01:39:34] [Save] metrics_trial001.csv
+[2025-09-12 01:39:34] [Save] params_trial001.json
+[2025-09-12 01:39:47] [Device] Using cpu
+[2025-09-12 01:39:47] [Sampler] qt_then_rd | Train=7954 | qt=3882 | rd=4072 | Test=2227
+[2025-09-12 01:39:50] [Epoch 10] Train Loss=0.003527 | Val Loss=0.003281
+[2025-09-12 01:39:52] [Epoch 20] Train Loss=0.003353 | Val Loss=0.003076
+[2025-09-12 01:39:54] [Epoch 30] Train Loss=0.002701 | Val Loss=0.003423
+[2025-09-12 01:39:57] [Epoch 40] Train Loss=0.002829 | Val Loss=0.003158
+[2025-09-12 01:39:59] [Epoch 50] Train Loss=0.002373 | Val Loss=0.003287
+[2025-09-12 01:40:00] [EarlyStopping] Epoch 54: no improvement for 20 epochs.
+[2025-09-12 01:40:00] [Timing] fit_time=12.223s
+[2025-09-12 01:40:00] [Timing] predict_time=0.009s
+[2025-09-12 01:40:00] [Metrics] R2=0.992310 | MAE=0.009152 | RMSE=0.015398
+[2025-09-12 01:40:00] [Save] predictions_trial001.csv
+[2025-09-12 01:40:00] [Save] metrics_trial001.csv
+[2025-09-12 01:40:00] [Save] params_trial001.json

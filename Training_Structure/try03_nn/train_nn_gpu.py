@@ -69,7 +69,11 @@ class SimpleMLP(nn.Module):
             nn.ReLU(),
             nn.Linear(hidden1, hidden2),
             nn.ReLU(),
-            nn.Linear(hidden2, 1)
+            nn.Linear(hidden2, 64),
+            nn.ReLU(),
+            nn.Linear(64, 32),
+            nn.ReLU(),
+            nn.Linear(32, 1)
         )
     def forward(self, x):
         return self.net(x)
