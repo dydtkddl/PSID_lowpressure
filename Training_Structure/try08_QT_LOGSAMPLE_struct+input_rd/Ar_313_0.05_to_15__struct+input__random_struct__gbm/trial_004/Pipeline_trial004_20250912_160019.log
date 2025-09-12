@@ -1,0 +1,16 @@
+2025-09-12 16:00:19,752 | INFO | [Data] Loaded: ../Data_collect/DataSet/Ar_313K/Ar_313K_Ar_313_0.05_to_Ar_313_15_dataset.csv | rows=7760 | cols=16
+2025-09-12 16:00:19,752 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-12 16:00:19,753 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 7760 -> 7760
+2025-09-12 16:00:19,754 | INFO | [Seeds] trial=4 | seeds={'seed': 56, 'seed_qt': 4052, 'seed_rd': 8052, 'model_seed': 12052}
+2025-09-12 16:00:19,755 | INFO | [S1 Random-Struct] train=6208 / test=1552 (ratio=0.80)
+2025-09-12 16:00:19,952 | INFO | [Save] sampling scatter & histogram plots
+2025-09-12 16:00:19,954 | INFO | [Model] kind=gbm | params={'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.05, 'loss': 'squared_error', 'max_depth': 5, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 500, 'n_iter_no_change': None, 'random_state': 12052, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2025-09-12 16:00:19,954 | INFO | [Holdout_trial004] Train=6208 | Test=1552
+2025-09-12 16:00:35,423 | INFO | [Timing_trial004] fit_time=15.468s
+2025-09-12 16:00:35,436 | INFO | [Timing_trial004] predict_time=0.013s
+2025-09-12 16:00:35,439 | INFO | [Metrics_trial004] R2=0.951969 | MAE=0.145198 | RMSE=0.066795 | MAPE%=6.166
+2025-09-12 16:00:35,458 | INFO | [Save] predictions_holdout_trial004.csv
+2025-09-12 16:00:35,459 | INFO | [Save] metrics_holdout_trial004.csv
+2025-09-12 16:00:35,460 | INFO | [Save] feature_importances_holdout_trial004.csv
+2025-09-12 16:00:35,460 | INFO | [Save] model_params_trial004.json
+2025-09-12 16:00:35,460 | INFO | [Done] trial=4 | outputs at: try08_QT_LOGSAMPLE_struct+input_rd/Ar_313_0.05_to_15__struct+input__random_struct__gbm/trial_004

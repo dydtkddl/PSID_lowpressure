@@ -45,6 +45,64 @@ try:
 except Exception:
     _HAS_CATBOOST = False
 
+import matplotlib.pyplot as plt
+
+def save_sampling_plots(df: pd.DataFrame,
+                        input_col: str,
+                        output_col: str,
+                        train_idx: np.ndarray,
+                        qt_idx: Optional[np.ndarray],
+                        outdir: Path,
+                        trial_id: int,
+                        n_bins : int):
+    """
+    Save scatter and histogram with sampling fractions.
+    """
+    suffix = f"_trial{trial_id:03d}"
+    sel_df = df.loc[train_idx]
+    all_df = df
+
+    # ------------------- Scatter plot -------------------
+    fig, ax = plt.subplots(figsize=(6,5))
+    ax.scatter(all_df[input_col], all_df[output_col],
+               s=10, color="lightgray", label="All data")
+    ax.scatter(sel_df[input_col], sel_df[output_col],
+               s=15, color="red", label="Sampled")
+    ax.set_xlabel(input_col)
+    ax.set_ylabel(output_col)
+    ax.legend()
+    ax.set_title(f"Scatter (trial {trial_id})")
+    fig.tight_layout()
+    fig.savefig(outdir / f"scatter_sampling{suffix}.png", dpi=200)
+    plt.close(fig)
+
+    # ------------------- Histogram (bin fraction) -------------------
+    if qt_idx is not None and len(qt_idx) > 0:
+        vals = np.log10(np.clip(df[input_col].values, a_min=1e-12, a_max=None))
+        sel_vals = np.log10(np.clip(df.loc[train_idx, input_col].values, a_min=1e-12, a_max=None))
+
+        counts, edges = np.histogram(vals, bins=n_bins)
+        sel_counts, _ = np.histogram(sel_vals, bins=edges)
+
+        frac = np.divide(sel_counts, counts,
+                         out=np.zeros_like(sel_counts, dtype=float),
+                         where=counts > 0)
+
+        centers = 0.5*(edges[:-1]+edges[1:])
+
+        fig, ax1 = plt.subplots(figsize=(7,5))
+        ax1.bar(centers, counts, width=(edges[1]-edges[0]), alpha=0.3, label="Original count")
+        ax2 = ax1.twinx()
+        ax2.plot(centers, frac*100, "r-o", label="Selected %")
+        ax1.set_xlabel(f"log10({input_col})")
+        ax1.set_ylabel("Original count")
+        ax2.set_ylabel("Selected (%)")
+        ax1.set_title(f"Histogram fraction (trial {trial_id})")
+        ax1.legend(loc="upper left")
+        ax2.legend(loc="upper right")
+        fig.tight_layout()
+        fig.savefig(outdir / f"hist_fraction{suffix}.png", dpi=200)
+        plt.close(fig)
 
 # ───────────────────────── Logger ─────────────────────────
 def setup_logger(outdir: Optional[Union[str, Path]] = None,
@@ -143,18 +201,24 @@ def quantile_weighted_sample(series_for_binning: pd.Series,
     """
     rng = np.random.default_rng(seed)
     vals = series_for_binning.values.astype(float)
+    print(vals)
     idx  = series_for_binning.index.values
     n    = len(idx)
     if n == 0 or n_samples <= 0:
         return np.array([], dtype=idx.dtype)
-
+    print(n_bins)
+    print("\n\n\n\n\n")
     # --- log10 변환 ---
     # 0 이하 값이 있으면 log10 불가 → 작은 epsilon 추가
     eps = 1e-12
-    log_vals = np.log10(np.clip(vals, a_min=eps, a_max=None))
-
+    #이미 log로변환되어서 오기때문에..
+#    log_vals = np.log10(np.clip(vals, a_min=eps, a_max=None))
+    log_vals = vals
+    print(log_vals)
     vmin, vmax = float(log_vals.min()), float(log_vals.max())
+    print(vmin, vmax)
     if vmin == vmax:
+        print(1)
         return rng.choice(idx, size=min(n_samples, n), replace=False)
 
     # --- log space에서 bin 분할 ---
@@ -165,7 +229,8 @@ def quantile_weighted_sample(series_for_binning: pd.Series,
     # --- bin별 데이터 할당 ---
     bin_to_idx = {b: idx[bin_ids == b] for b in range(n_bins)}
     counts     = np.array([len(bin_to_idx[b]) for b in range(n_bins)], dtype=float)
-
+    print(len(bin_to_idx))
+    print("\n\n\n\n")
     # --- bin별 가중치 ---
     valid = np.where(counts > 0)[0]
     weights = np.zeros_like(counts)
@@ -566,7 +631,16 @@ def main():
             trial_dir / f"train_rd_indices{suffix}.csv", index=False, encoding="utf-8-sig")
     with open(trial_dir / f"sampling_info{suffix}.json", "w", encoding="utf-8") as f:
         json.dump(sample["info"], f, ensure_ascii=False, indent=2)
-
+    if "Input" in df_train.columns and args.target in df_train.columns:
+        save_sampling_plots(df_train,
+                            input_col="Input",
+                            output_col=args.target,
+                            train_idx=sample["train_idx"],
+                            qt_idx=sample.get("train_qt_idx"),
+                            outdir=trial_dir,
+                            trial_id=args.trial,
+                            n_bins = args.n_bins)
+        logger.info(f"[Save] sampling scatter & histogram plots")
     # Build model params (inject trial-specific seed)
     model_params: Dict[str, Union[int, float]] = {}
     if args.model == "rf":

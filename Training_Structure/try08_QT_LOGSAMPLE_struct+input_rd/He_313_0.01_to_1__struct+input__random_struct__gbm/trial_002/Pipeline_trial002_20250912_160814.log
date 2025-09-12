@@ -1,0 +1,16 @@
+2025-09-12 16:08:14,400 | INFO | [Data] Loaded: ../Data_collect/DataSet/He_313K/He_313K_He_313_0.01_to_He_313_1_dataset.csv | rows=10181 | cols=16
+2025-09-12 16:08:14,400 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-12 16:08:14,402 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 10181 -> 10181
+2025-09-12 16:08:14,403 | INFO | [Seeds] trial=2 | seeds={'seed': 54, 'seed_qt': 2052, 'seed_rd': 4052, 'model_seed': 6052}
+2025-09-12 16:08:14,404 | INFO | [S1 Random-Struct] train=8145 / test=2036 (ratio=0.80)
+2025-09-12 16:08:14,639 | INFO | [Save] sampling scatter & histogram plots
+2025-09-12 16:08:14,641 | INFO | [Model] kind=gbm | params={'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.05, 'loss': 'squared_error', 'max_depth': 5, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 500, 'n_iter_no_change': None, 'random_state': 6052, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2025-09-12 16:08:14,641 | INFO | [Holdout_trial002] Train=8145 | Test=2036
+2025-09-12 16:08:34,331 | INFO | [Timing_trial002] fit_time=19.690s
+2025-09-12 16:08:34,347 | INFO | [Timing_trial002] predict_time=0.015s
+2025-09-12 16:08:34,349 | INFO | [Metrics_trial002] R2=0.976080 | MAE=0.000893 | RMSE=0.000007 | MAPE%=7.835
+2025-09-12 16:08:34,371 | INFO | [Save] predictions_holdout_trial002.csv
+2025-09-12 16:08:34,372 | INFO | [Save] metrics_holdout_trial002.csv
+2025-09-12 16:08:34,373 | INFO | [Save] feature_importances_holdout_trial002.csv
+2025-09-12 16:08:34,373 | INFO | [Save] model_params_trial002.json
+2025-09-12 16:08:34,373 | INFO | [Done] trial=2 | outputs at: try08_QT_LOGSAMPLE_struct+input_rd/He_313_0.01_to_1__struct+input__random_struct__gbm/trial_002
