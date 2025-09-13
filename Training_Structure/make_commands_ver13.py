@@ -3,16 +3,23 @@ from tqdm import tqdm
 import argparse
 import math
 
+
 def generate_commands():
-    TEMPS = [273, 293, 313]
+    TEMPS = [293]#,273,  293, 313]
     GASES = ["He", "Ar"]
     TRAINRATIOS = [0.05, 0.1 , 0.15 , 0.2 , 0.25 ,0.3 ,0.35 ,0.4 ,0.45, 0.5 ,0.55 ,0.6, 0.65, 0.7, 0.75, 0.8]
-    SAMPLINGS = ["qt_then_rd", "random_struct"]
-    SAMPLINGS = ["random_struct"]
-    MODELS = ["cat", "rf", "gbm"]
+
+    SAMPLINGS = [
+        ("qt_then_rd", "struct+input"),
+        ("random_struct", "struct+input"),
+        ("random_struct", "struct"),
+                 ]
+    # SAMPLINGS = ["random_struct"]
+    MODELS = ["cat"] # ,"rf", "gbm"]
     SEED = 52
     TRIALS = [1, 2, 3, 4, 5]
-
+    LOWS = [ 0.01]#, 0.05, 0.1, 0.5]
+    HIGHS = [1,5, 15]
     commands = []
 
     total_combos = len(TEMPS) * len(GASES) * len(TRAINRATIOS) * len(SAMPLINGS) * len(MODELS) * len(TRIALS)
@@ -21,19 +28,20 @@ def generate_commands():
     for gas in tqdm(GASES, desc="Gases loop"):
         for temp in TEMPS:
             for train_ratio in TRAINRATIOS:
-                for sampling in SAMPLINGS:
+                for (sampling, INPUT) in SAMPLINGS:
                     for model in MODELS:
                         for trial in TRIALS:
-                            cmd = (
-                                f"python pipeline_single_trial_QT_LOGSAMPLE.py "
-                                f"--data ../Data_collect/DataSet/{gas}_{temp}K/{gas}_{temp}K_{gas}_{temp}_0.01_to_{gas}_{temp}_1_dataset.csv "
-                                f"--outdir try09/{gas}_{temp}_0.01_to_1__struct+input__{sampling}__{model}_TRAIN_RATIO{train_ratio}_QTFRAC_{train_ratio} "
-                                f"--seed-base {SEED} --features struct+input --sample {sampling} "
-                                f"--model {model} --n-bins 200 --train-ratio {train_ratio} --qt-frac {train_ratio} --trial {trial}"
-                            )
-                            commands.append(cmd)
+                            for LOW in LOWS:
+                                for HIGH  in HIGHS:
+                                    cmd = (
+                                        f"python pipeline_single_trial_QT_LOGSAMPLE.py "
+                                        f"--data ../Data_collect/DataSet/{gas}_{temp}K/{gas}_{temp}K_{gas}_{temp}_{LOW}_to_{gas}_{temp}_{HIGH}_dataset.csv "
+                                        f"--outdir try09_all/{gas}_{temp}_{LOW}_to_{HIGH}__{INPUT}__{sampling}__{model}_TRAIN_RATIO{train_ratio}_QTFRAC_{train_ratio} "
+                                        f"--seed-base {SEED} --features struct+input --sample {sampling} "
+                                        f"--model {model} --n-bins 200 --train-ratio {train_ratio} --qt-frac {train_ratio} --trial {trial}"
+                                    )
+                                    commands.append(cmd)
     return commands
-
 
 def save_split(commands, split, prefix="commands_part"):
     n = len(commands)
