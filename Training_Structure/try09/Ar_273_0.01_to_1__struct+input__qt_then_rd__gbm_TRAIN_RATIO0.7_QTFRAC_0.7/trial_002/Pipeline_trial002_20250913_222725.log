@@ -1,0 +1,16 @@
+2025-09-13 22:27:25,488 | INFO | [Data] Loaded: ../Data_collect/DataSet/Ar_273K/Ar_273K_Ar_273_0.01_to_Ar_273_1_dataset.csv | rows=7758 | cols=16
+2025-09-13 22:27:25,488 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-13 22:27:25,489 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 7758 -> 7758
+2025-09-13 22:27:25,490 | INFO | [Seeds] trial=2 | seeds={'seed': 54, 'seed_qt': 2052, 'seed_rd': 4052, 'model_seed': 6052}
+2025-09-13 22:27:25,495 | INFO | [S3 QT→RD] train(qt)=5431, train(rd)=0, test=2327 (train_ratio=0.70, qt_frac_total=0.70, shift=0.000e+00)
+2025-09-13 22:27:25,984 | INFO | [Save] sampling scatter & histogram plots
+2025-09-13 22:27:25,986 | INFO | [Model] kind=gbm | params={'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.05, 'loss': 'squared_error', 'max_depth': 5, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 500, 'n_iter_no_change': None, 'random_state': 6052, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2025-09-13 22:27:25,986 | INFO | [Holdout_trial002] Train=5431 | Test=2327
+2025-09-13 22:27:39,403 | INFO | [Timing_trial002] fit_time=13.416s
+2025-09-13 22:27:39,419 | INFO | [Timing_trial002] predict_time=0.016s
+2025-09-13 22:27:39,422 | INFO | [Metrics_trial002] R2=0.982497 | MAE=0.017057 | RMSE=0.000722 | MAPE%=3.089
+2025-09-13 22:27:39,445 | INFO | [Save] predictions_holdout_trial002.csv
+2025-09-13 22:27:39,447 | INFO | [Save] metrics_holdout_trial002.csv
+2025-09-13 22:27:39,447 | INFO | [Save] feature_importances_holdout_trial002.csv
+2025-09-13 22:27:39,448 | INFO | [Save] model_params_trial002.json
+2025-09-13 22:27:39,448 | INFO | [Done] trial=2 | outputs at: try09/Ar_273_0.01_to_1__struct+input__qt_then_rd__gbm_TRAIN_RATIO0.7_QTFRAC_0.7/trial_002
