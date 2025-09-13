@@ -1,0 +1,16 @@
+2025-09-14 03:09:11,322 | INFO | [Data] Loaded: ../Data_collect/DataSet_PLDSCREENED/Ar_313K/Ar_313K_Ar_313_0.05_to_Ar_313_15_dataset.csv | rows=7760 | cols=16
+2025-09-14 03:09:11,322 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-14 03:09:11,334 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 7760 -> 7760
+2025-09-14 03:09:11,344 | INFO | [Seeds] trial=4 | seeds={'seed': 56, 'seed_qt': 4052, 'seed_rd': 8052, 'model_seed': 12052}
+2025-09-14 03:09:11,407 | INFO | [S3 QT→RD] train(qt)=3104, train(rd)=3104, test=1552 (train_ratio=0.80, qt_frac_total=0.40, shift=0.000e+00)
+2025-09-14 03:09:11,906 | INFO | [Save] sampling scatter & histogram plots
+2025-09-14 03:09:11,968 | INFO | [Model] kind=rf | params={'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'squared_error', 'max_depth': None, 'max_features': 1.0, 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 800, 'n_jobs': -1, 'oob_score': False, 'random_state': 12052, 'verbose': 0, 'warm_start': False}
+2025-09-14 03:09:11,969 | INFO | [Holdout_trial004] Train=6208 | Test=1552
+2025-09-14 03:09:48,436 | INFO | [Timing_trial004] fit_time=36.467s
+2025-09-14 03:09:48,712 | INFO | [Timing_trial004] predict_time=0.276s
+2025-09-14 03:09:48,716 | INFO | [Metrics_trial004] R2=0.959405 | MAE=0.124319 | RMSE=0.039224 | MAPE%=4.961
+2025-09-14 03:09:48,855 | INFO | [Save] predictions_holdout_trial004.csv
+2025-09-14 03:09:48,856 | INFO | [Save] metrics_holdout_trial004.csv
+2025-09-14 03:09:48,856 | INFO | [Save] feature_importances_holdout_trial004.csv
+2025-09-14 03:09:48,857 | INFO | [Save] model_params_trial004.json
+2025-09-14 03:09:48,857 | INFO | [Done] trial=4 | outputs at: try11/Ar_313_0.05_to_15__struct+input__qt_then_rd__rf_TRAIN_RATIO0.8_QTFRAC_0.8/trial_004
