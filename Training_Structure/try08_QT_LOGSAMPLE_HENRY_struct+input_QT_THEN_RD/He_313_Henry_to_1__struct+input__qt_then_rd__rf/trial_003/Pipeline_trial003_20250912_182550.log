@@ -1,0 +1,16 @@
+2025-09-12 18:25:50,614 | INFO | [Data] Loaded: ../Data_collect/DataSet/HENRY_AR_HE/He/He_313K_He_313_Henry_to_He_313_1_dataset.csv | rows=10181 | cols=15
+2025-09-12 18:25:50,614 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-12 18:25:50,616 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 10181 -> 10181
+2025-09-12 18:25:50,617 | INFO | [Seeds] trial=3 | seeds={'seed': 55, 'seed_qt': 3052, 'seed_rd': 6052, 'model_seed': 9052}
+2025-09-12 18:25:50,623 | INFO | [S3 QT→RD] train(qt)=4072, train(rd)=4073, test=2036 (train_ratio=0.80, qt_frac_total=0.40, shift=0.000e+00)
+2025-09-12 18:25:51,139 | INFO | [Save] sampling scatter & histogram plots
+2025-09-12 18:25:51,141 | INFO | [Model] kind=rf | params={'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'squared_error', 'max_depth': None, 'max_features': 1.0, 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 800, 'n_jobs': -1, 'oob_score': False, 'random_state': 9052, 'verbose': 0, 'warm_start': False}
+2025-09-12 18:25:51,141 | INFO | [Holdout_trial003] Train=8145 | Test=2036
+2025-09-12 18:26:43,331 | INFO | [Timing_trial003] fit_time=52.189s
+2025-09-12 18:26:43,734 | INFO | [Timing_trial003] predict_time=0.403s
+2025-09-12 18:26:43,737 | INFO | [Metrics_trial003] R2=0.978542 | MAE=0.001036 | RMSE=0.000002 | MAPE%=9.311
+2025-09-12 18:26:43,904 | INFO | [Save] predictions_holdout_trial003.csv
+2025-09-12 18:26:43,905 | INFO | [Save] metrics_holdout_trial003.csv
+2025-09-12 18:26:43,905 | INFO | [Save] feature_importances_holdout_trial003.csv
+2025-09-12 18:26:43,906 | INFO | [Save] model_params_trial003.json
+2025-09-12 18:26:43,906 | INFO | [Done] trial=3 | outputs at: try08_QT_LOGSAMPLE_HENRY_struct+input_QT_THEN_RD/He_313_Henry_to_1__struct+input__qt_then_rd__rf/trial_003

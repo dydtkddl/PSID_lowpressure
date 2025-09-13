@@ -1,0 +1,16 @@
+2025-09-12 18:22:50,039 | INFO | [Data] Loaded: ../Data_collect/DataSet/HENRY_AR_HE/Ar/Ar_273K_Ar_273_Henry_to_Ar_273_5_dataset.csv | rows=7760 | cols=15
+2025-09-12 18:22:50,040 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-12 18:22:50,042 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 7760 -> 7758
+2025-09-12 18:22:50,043 | INFO | [Seeds] trial=4 | seeds={'seed': 56, 'seed_qt': 4052, 'seed_rd': 8052, 'model_seed': 12052}
+2025-09-12 18:22:50,048 | INFO | [S3 QT→RD] train(qt)=3103, train(rd)=3103, test=1552 (train_ratio=0.80, qt_frac_total=0.40, shift=0.000e+00)
+2025-09-12 18:22:50,530 | INFO | [Save] sampling scatter & histogram plots
+2025-09-12 18:22:50,532 | INFO | [Model] kind=rf | params={'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'squared_error', 'max_depth': None, 'max_features': 1.0, 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 800, 'n_jobs': -1, 'oob_score': False, 'random_state': 12052, 'verbose': 0, 'warm_start': False}
+2025-09-12 18:22:50,532 | INFO | [Holdout_trial004] Train=6206 | Test=1552
+2025-09-12 18:23:31,218 | INFO | [Timing_trial004] fit_time=40.685s
+2025-09-12 18:23:31,495 | INFO | [Timing_trial004] predict_time=0.277s
+2025-09-12 18:23:31,497 | INFO | [Metrics_trial004] R2=0.929966 | MAE=0.116310 | RMSE=0.048155 | MAPE%=5.557
+2025-09-12 18:23:31,634 | INFO | [Save] predictions_holdout_trial004.csv
+2025-09-12 18:23:31,636 | INFO | [Save] metrics_holdout_trial004.csv
+2025-09-12 18:23:31,636 | INFO | [Save] feature_importances_holdout_trial004.csv
+2025-09-12 18:23:31,636 | INFO | [Save] model_params_trial004.json
+2025-09-12 18:23:31,636 | INFO | [Done] trial=4 | outputs at: try08_QT_LOGSAMPLE_HENRY_struct+input_QT_THEN_RD/Ar_273_Henry_to_5__struct+input__qt_then_rd__rf/trial_004

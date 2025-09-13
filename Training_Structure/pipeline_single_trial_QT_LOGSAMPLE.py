@@ -518,7 +518,8 @@ def parse_args():
     p.add_argument("--trial", type=int, required=True, help="Trial index (e.g., 1, 2, 3 ...)")
     p.add_argument("--seed-base", type=int, default=42, help="Base seed to derive trial-specific seeds")
     p.add_argument("--target", type=str, default="Output")
-    p.add_argument("--meta", type=str, nargs="*", default=["filename","name"], help="Meta columns to keep")
+#    p.add_argument("--meta", type=str, nargs="*", default=["filename","name"], help="Meta columns to keep")
+    p.add_argument("--meta", type=str, nargs="*", default=["filename"], help="Meta columns to keep")
 
     # features
     p.add_argument("--features", type=str, choices=["struct", "struct+input", "custom"], default="struct",

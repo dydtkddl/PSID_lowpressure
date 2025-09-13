@@ -1,0 +1,16 @@
+2025-09-12 18:24:14,470 | INFO | [Data] Loaded: ../Data_collect/DataSet/HENRY_AR_HE/Ar/Ar_313K_Ar_313_Henry_to_Ar_313_15_dataset.csv | rows=7760 | cols=15
+2025-09-12 18:24:14,470 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-12 18:24:14,472 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 7760 -> 7760
+2025-09-12 18:24:14,473 | INFO | [Seeds] trial=1 | seeds={'seed': 53, 'seed_qt': 1052, 'seed_rd': 2052, 'model_seed': 3052}
+2025-09-12 18:24:14,478 | INFO | [S3 QT→RD] train(qt)=3104, train(rd)=3104, test=1552 (train_ratio=0.80, qt_frac_total=0.40, shift=0.000e+00)
+2025-09-12 18:24:14,960 | INFO | [Save] sampling scatter & histogram plots
+2025-09-12 18:24:14,962 | INFO | [Model] kind=gbm | params={'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.05, 'loss': 'squared_error', 'max_depth': 5, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 500, 'n_iter_no_change': None, 'random_state': 3052, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2025-09-12 18:24:14,962 | INFO | [Holdout_trial001] Train=6208 | Test=1552
+2025-09-12 18:24:29,751 | INFO | [Timing_trial001] fit_time=14.789s
+2025-09-12 18:24:29,764 | INFO | [Timing_trial001] predict_time=0.012s
+2025-09-12 18:24:29,766 | INFO | [Metrics_trial001] R2=0.870383 | MAE=0.262589 | RMSE=0.122763 | MAPE%=11.737
+2025-09-12 18:24:29,784 | INFO | [Save] predictions_holdout_trial001.csv
+2025-09-12 18:24:29,785 | INFO | [Save] metrics_holdout_trial001.csv
+2025-09-12 18:24:29,785 | INFO | [Save] feature_importances_holdout_trial001.csv
+2025-09-12 18:24:29,785 | INFO | [Save] model_params_trial001.json
+2025-09-12 18:24:29,786 | INFO | [Done] trial=1 | outputs at: try08_QT_LOGSAMPLE_HENRY_struct+input_QT_THEN_RD/Ar_313_Henry_to_15__struct+input__qt_then_rd__gbm/trial_001

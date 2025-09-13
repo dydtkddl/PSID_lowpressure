@@ -1,0 +1,3 @@
+2025-09-12 18:21:43,133 | INFO | [Data] Loaded: ../Data_collect/DataSet/HENRY_AR_HE/Ar/Ar_313K_Ar_313_Henry_to_Ar_313_1_dataset.csv | rows=7760 | cols=15
+2025-09-12 18:21:43,133 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-12 18:21:43,135 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 7760 -> 7760
