@@ -11,7 +11,7 @@ def generate_commands():
 
     SAMPLINGS = [
         ("qt_then_rd", "struct+input"),
-        ("random_struct", "struct+input"),
+        ("random_with_input", "struct+input"),
         ("random_struct", "struct"),
                  ]
     # SAMPLINGS = ["random_struct"]
@@ -37,7 +37,7 @@ def generate_commands():
                                         f"python pipeline_single_trial_QT_LOGSAMPLE.py "
                                         f"--data ../Data_collect/DataSet/{gas}_{temp}K/{gas}_{temp}K_{gas}_{temp}_{LOW}_to_{gas}_{temp}_{HIGH}_dataset.csv "
                                         f"--outdir try09_all/{gas}_{temp}_{LOW}_to_{HIGH}__{INPUT}__{sampling}__{model}_TRAIN_RATIO{train_ratio}_QTFRAC_{train_ratio} "
-                                        f"--seed-base {SEED} --features struct+input --sample {sampling} "
+                                        f"--seed-base {SEED} --features {INPUT} --sample {sampling} "
                                         f"--model {model} --n-bins 200 --train-ratio {train_ratio} --qt-frac {train_ratio} --trial {trial}"
                                     )
                                     commands.append(cmd)

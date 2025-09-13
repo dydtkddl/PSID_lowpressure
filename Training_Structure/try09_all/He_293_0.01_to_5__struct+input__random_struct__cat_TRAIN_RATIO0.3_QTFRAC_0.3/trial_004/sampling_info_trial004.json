@@ -1,5 +1,0 @@
-{
-  "strategy": "random_struct_only",
-  "train_ratio": 0.3,
-  "seed": 56
-}

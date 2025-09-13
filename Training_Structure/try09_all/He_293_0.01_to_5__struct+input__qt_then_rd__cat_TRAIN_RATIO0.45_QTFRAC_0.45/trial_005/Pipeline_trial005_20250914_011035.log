@@ -1,0 +1,2 @@
+2025-09-14 01:10:35,504 | INFO | [Data] Loaded: ../Data_collect/DataSet/He_293K/He_293K_He_293_0.01_to_He_293_5_dataset.csv | rows=10181 | cols=16
+2025-09-14 01:10:35,504 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
