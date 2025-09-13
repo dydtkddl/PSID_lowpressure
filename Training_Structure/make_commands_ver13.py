@@ -33,7 +33,7 @@ def generate_commands():
                         for trial in TRIALS:
                             for LOW in LOWS:
                                 for HIGH  in HIGHS:
-                                    train_ratio2 = int(train_ratio)/2
+                                    train_ratio2 = float(train_ratio)/2
                                     cmd = (
                                         f"python pipeline_single_trial_QT_LOGSAMPLE.py "
                                         f"--data ../Data_collect/DataSet_PLDSCREENED/{gas}_{temp}K/{gas}_{temp}K_{gas}_{temp}_{LOW}_to_{gas}_{temp}_{HIGH}_dataset.csv "
