@@ -1,0 +1,10 @@
+{
+  "strategy": "quantile_then_random_on_input",
+  "train_ratio": 0.5,
+  "qt_frac_total": 0.25,
+  "n_bins": 200,
+  "gamma": 0.5,
+  "seed_qt": 5052,
+  "seed_rd": 10052,
+  "shift_in": 0.0
+}
