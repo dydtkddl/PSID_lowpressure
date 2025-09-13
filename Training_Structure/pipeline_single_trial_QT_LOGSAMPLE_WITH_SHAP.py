@@ -47,30 +47,59 @@ except Exception:
 
 import matplotlib.pyplot as plt
 import shap
-
 def get_feature_importance(model, X_test: pd.DataFrame,
                            y_test: pd.Series,
                            logger: Optional[logging.Logger] = None,
                            use_permutation_if_missing: bool = True,
                            n_repeats: int = 10,
                            random_state: int = 42,
-                           use_shap: bool = False) -> pd.Series:
+                           use_shap: bool = False,
+                           shap_outdir: Optional[Path] = None,
+                           suffix: str = "") -> pd.Series:
     """
-    Feature importance with optional SHAP support.
+    Feature importance with optional SHAP support + CSV/PNG 저장
     """
     try:
         if use_shap:
             import shap
+            # ---- 샘플링 (200개만) ----
+            if len(X_test) > 200:
+                X_sample = X_test.sample(n=200, random_state=random_state)
+            else:
+                X_sample = X_test
             explainer = shap.TreeExplainer(model)
-            shap_values = explainer.shap_values(X_test)
+            shap_values = explainer.shap_values(X_sample)
 
-            # SHAP 값의 절댓값 평균 → importance
+            # ---- Importance (abs mean) ----
             mean_abs_shap = np.abs(shap_values).mean(axis=0)
             imp = pd.Series(mean_abs_shap, index=X_test.columns, name="importance")
-            if logger:
-                logger.info("[Importance] Using SHAP values")
+
+            if shap_outdir is not None:
+                shap_outdir.mkdir(parents=True, exist_ok=True)
+
+                # CSV 저장
+                imp.to_csv(shap_outdir / f"feature_importances_shap{suffix}.csv", encoding="utf-8-sig")
+
+                # Summary plot 저장
+                plt.figure()
+                shap.summary_plot(shap_values, X_sample, show=False)
+                plt.tight_layout()
+                plt.savefig(shap_outdir / f"shap_summary{suffix}.png", dpi=200)
+                plt.close()
+
+                # Bar plot 저장
+                plt.figure()
+                shap.summary_plot(shap_values, X_sample, plot_type="bar", show=False)
+                plt.tight_layout()
+                plt.savefig(shap_outdir / f"shap_bar{suffix}.png", dpi=200)
+                plt.close()
+
+                if logger:
+                    logger.info(f"[SHAP] Saved CSV + PNG to {shap_outdir}")
+
             return imp.sort_values(ascending=False)
 
+        # ---- 기존 fallback ----
         if hasattr(model, "feature_importances_"):
             imp = pd.Series(model.feature_importances_, index=X_test.columns, name="importance")
             return imp.sort_values(ascending=False)
@@ -83,7 +112,6 @@ def get_feature_importance(model, X_test: pd.DataFrame,
         if use_permutation_if_missing:
             if logger:
                 logger.info("[Importance] Using permutation_importance")
-            from sklearn.inspection import permutation_importance
             r = permutation_importance(model, X_test, y_test,
                                        n_repeats=n_repeats, random_state=random_state, n_jobs=-1)
             imp = pd.Series(r.importances_mean, index=X_test.columns, name="importance")
@@ -94,6 +122,7 @@ def get_feature_importance(model, X_test: pd.DataFrame,
             logger.warning(f"[Importance] fallback failed: {e}")
 
     return pd.Series(np.zeros(X_test.shape[1]), index=X_test.columns, name="importance")
+
 
 def save_sampling_plots(df: pd.DataFrame,
                         input_col: str,
@@ -508,9 +537,11 @@ def train_holdout_general(X: pd.DataFrame, y: pd.Series,
 
     # imp = get_feature_importance(model, X_te, y_te, logger=logger)
     imp = get_feature_importance(
-        model, X_te, y_te, logger=logger,
-        use_shap=True
-    )
+    model, X_te, y_te, logger=logger,
+    use_shap=True,
+    shap_outdir=outdir,   # ← 저장 경로
+    suffix=suffix         # ← trial suffix
+)
 
 
     if outdir is not None:
