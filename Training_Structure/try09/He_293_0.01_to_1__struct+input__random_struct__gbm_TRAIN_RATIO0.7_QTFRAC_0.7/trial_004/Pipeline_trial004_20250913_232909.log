@@ -1,0 +1,16 @@
+2025-09-13 23:29:09,754 | INFO | [Data] Loaded: ../Data_collect/DataSet/He_293K/He_293K_He_293_0.01_to_He_293_1_dataset.csv | rows=10181 | cols=16
+2025-09-13 23:29:09,754 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-13 23:29:09,756 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 10181 -> 10181
+2025-09-13 23:29:09,757 | INFO | [Seeds] trial=4 | seeds={'seed': 56, 'seed_qt': 4052, 'seed_rd': 8052, 'model_seed': 12052}
+2025-09-13 23:29:09,758 | INFO | [S1 Random-Struct] train=7127 / test=3054 (ratio=0.70)
+2025-09-13 23:29:09,986 | INFO | [Save] sampling scatter & histogram plots
+2025-09-13 23:29:09,989 | INFO | [Model] kind=gbm | params={'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.05, 'loss': 'squared_error', 'max_depth': 5, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 500, 'n_iter_no_change': None, 'random_state': 12052, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2025-09-13 23:29:09,989 | INFO | [Holdout_trial004] Train=7127 | Test=3054
+2025-09-13 23:29:27,388 | INFO | [Timing_trial004] fit_time=17.399s
+2025-09-13 23:29:27,410 | INFO | [Timing_trial004] predict_time=0.022s
+2025-09-13 23:29:27,413 | INFO | [Metrics_trial004] R2=0.925140 | MAE=0.001006 | RMSE=0.000034 | MAPE%=7.169
+2025-09-13 23:29:27,442 | INFO | [Save] predictions_holdout_trial004.csv
+2025-09-13 23:29:27,443 | INFO | [Save] metrics_holdout_trial004.csv
+2025-09-13 23:29:27,444 | INFO | [Save] feature_importances_holdout_trial004.csv
+2025-09-13 23:29:27,444 | INFO | [Save] model_params_trial004.json
+2025-09-13 23:29:27,445 | INFO | [Done] trial=4 | outputs at: try09/He_293_0.01_to_1__struct+input__random_struct__gbm_TRAIN_RATIO0.7_QTFRAC_0.7/trial_004

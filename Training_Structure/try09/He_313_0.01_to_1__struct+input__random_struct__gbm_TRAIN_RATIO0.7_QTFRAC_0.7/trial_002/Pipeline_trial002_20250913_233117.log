@@ -1,0 +1,16 @@
+2025-09-13 23:31:17,575 | INFO | [Data] Loaded: ../Data_collect/DataSet/He_313K/He_313K_He_313_0.01_to_He_313_1_dataset.csv | rows=10181 | cols=16
+2025-09-13 23:31:17,576 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-13 23:31:17,577 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 10181 -> 10181
+2025-09-13 23:31:17,578 | INFO | [Seeds] trial=2 | seeds={'seed': 54, 'seed_qt': 2052, 'seed_rd': 4052, 'model_seed': 6052}
+2025-09-13 23:31:17,579 | INFO | [S1 Random-Struct] train=7127 / test=3054 (ratio=0.70)
+2025-09-13 23:31:17,806 | INFO | [Save] sampling scatter & histogram plots
+2025-09-13 23:31:17,808 | INFO | [Model] kind=gbm | params={'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.05, 'loss': 'squared_error', 'max_depth': 5, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 500, 'n_iter_no_change': None, 'random_state': 6052, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2025-09-13 23:31:17,809 | INFO | [Holdout_trial002] Train=7127 | Test=3054
+2025-09-13 23:31:35,039 | INFO | [Timing_trial002] fit_time=17.230s
+2025-09-13 23:31:35,060 | INFO | [Timing_trial002] predict_time=0.021s
+2025-09-13 23:31:35,063 | INFO | [Metrics_trial002] R2=0.973653 | MAE=0.000885 | RMSE=0.000007 | MAPE%=7.772
+2025-09-13 23:31:35,095 | INFO | [Save] predictions_holdout_trial002.csv
+2025-09-13 23:31:35,096 | INFO | [Save] metrics_holdout_trial002.csv
+2025-09-13 23:31:35,097 | INFO | [Save] feature_importances_holdout_trial002.csv
+2025-09-13 23:31:35,097 | INFO | [Save] model_params_trial002.json
+2025-09-13 23:31:35,098 | INFO | [Done] trial=2 | outputs at: try09/He_313_0.01_to_1__struct+input__random_struct__gbm_TRAIN_RATIO0.7_QTFRAC_0.7/trial_002

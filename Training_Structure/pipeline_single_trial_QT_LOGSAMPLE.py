@@ -156,6 +156,7 @@ def dropna_for_training(df: pd.DataFrame, features: List[str], target: str,
                         logger: Optional[logging.Logger] = None) -> pd.DataFrame:
     before = len(df)
     out = df.dropna(subset=features + [target]).copy()
+    print(out.head())
     if logger: logger.info(f"[Preprocess] Drop NaN rows (FEATURES+TARGET): {before} -> {len(out)}")
     return out
 
@@ -163,6 +164,7 @@ def build_X_y_meta(df: pd.DataFrame, features: List[str], target: str,
                    meta_keep: Optional[List[str]] = None
                    ) -> Tuple[pd.DataFrame, pd.Series, Optional[pd.DataFrame]]:
     X = df[features].copy()
+    print(X)
     y = pd.to_numeric(df[target], errors="coerce").astype(float)
     meta = df[meta_keep].copy() if meta_keep else None
     return X, y, meta
@@ -446,8 +448,9 @@ def train_holdout_general(X: pd.DataFrame, y: pd.Series,
 
     t1 = time.time(); y_pred = model.predict(X_te); pred_time = time.time() - t1
     logger.info(f"[Timing{suffix}] predict_time={pred_time:.3f}s")
-
+    
     r2 = r2_score(y_te, y_pred)
+    print(y_te, y_pred, "\n\n\n\n")
     mae = mean_absolute_error(y_te, y_pred)
     rmse = mean_squared_error(y_te, y_pred)
                             #    squared=False)
@@ -581,6 +584,7 @@ def main():
     # choose features
     if args.features == "struct":
         FEATURES = select_struct_features(df)
+        print(FEATURES)
     elif args.features == "struct+input":
         FEATURES = select_struct_features(df) + ["Input"]
     else:
@@ -596,7 +600,7 @@ def main():
     # derive trial seeds
     seeds = _derive_trial_seeds(args.seed_base, args.trial)
     logger.info(f"[Seeds] trial={args.trial} | seeds={seeds}")
-
+    df_train.to_csv(trial_dir/f"df_train.csv", index=False, encoding="utf-8-sig")
     # Sampling (single trial)
     if args.sampler == "random_struct":
         sample = sample_random_struct_only(
@@ -666,7 +670,10 @@ def main():
             model_params["learning_rate"] = args.cat_learning_rate
         model_params["random_seed"] = seeds["model_seed"]
         model_params.setdefault("verbose", False)
-
+    print(X)
+    print(X.columns)
+    X.to_csv(trial_dir/"X.csv", index=False, encoding="utf-8-sig")
+    y.to_csv(trial_dir/"y.csv", index=False, encoding="utf-8-sig")
     # Train (holdout, single trial)
     _ = train_holdout_general(
         X=X, y=y,

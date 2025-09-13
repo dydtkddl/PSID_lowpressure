@@ -1,0 +1,16 @@
+2025-09-13 23:24:44,343 | INFO | [Data] Loaded: ../Data_collect/DataSet/Ar_273K/Ar_273K_Ar_273_0.01_to_Ar_273_1_dataset.csv | rows=7758 | cols=16
+2025-09-13 23:24:44,344 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-13 23:24:44,345 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 7758 -> 7758
+2025-09-13 23:24:44,347 | INFO | [Seeds] trial=4 | seeds={'seed': 56, 'seed_qt': 4052, 'seed_rd': 8052, 'model_seed': 12052}
+2025-09-13 23:24:44,347 | INFO | [S1 Random-Struct] train=1940 / test=5818 (ratio=0.25)
+2025-09-13 23:24:44,536 | INFO | [Save] sampling scatter & histogram plots
+2025-09-13 23:24:44,539 | INFO | [Model] kind=gbm | params={'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.05, 'loss': 'squared_error', 'max_depth': 5, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 500, 'n_iter_no_change': None, 'random_state': 12052, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2025-09-13 23:24:44,539 | INFO | [Holdout_trial004] Train=1940 | Test=5818
+2025-09-13 23:24:49,204 | INFO | [Timing_trial004] fit_time=4.665s
+2025-09-13 23:24:49,244 | INFO | [Timing_trial004] predict_time=0.040s
+2025-09-13 23:24:49,247 | INFO | [Metrics_trial004] R2=0.924254 | MAE=0.036611 | RMSE=0.018053 | MAPE%=4.515
+2025-09-13 23:24:49,299 | INFO | [Save] predictions_holdout_trial004.csv
+2025-09-13 23:24:49,300 | INFO | [Save] metrics_holdout_trial004.csv
+2025-09-13 23:24:49,301 | INFO | [Save] feature_importances_holdout_trial004.csv
+2025-09-13 23:24:49,301 | INFO | [Save] model_params_trial004.json
+2025-09-13 23:24:49,301 | INFO | [Done] trial=4 | outputs at: try09/Ar_273_0.01_to_1__struct+input__random_struct__gbm_TRAIN_RATIO0.25_QTFRAC_0.25/trial_004

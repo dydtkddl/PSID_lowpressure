@@ -5,27 +5,29 @@ from tqdm import tqdm
 
 # === 설정 ===
 DATA_ROOT = Path("../Data_collect/DataSet")  # 데이터셋 루트
-OUT_ROOT = Path("./try08_QT_LOGSAMPLE_HENRY_struct+input_RD")
+OUT_ROOT = Path("./try09_TRAIN_RATIO_0.5_QT_FRAC_0.25_QTRD")
 OUT_ROOT.mkdir(exist_ok=True)
 
 #GASES = ["Ar", "He", "N2", "O2", "CO2", "H2"]
 GASES = ["Ar", "He"]
 TEMPS = [273, 293, 313]
 
-INPUTS = ["Henry"]
+INPUTS = ["Henry", 0.01 , 0.05 , 0.1 , 0.5 ]
 OUTPUTS = [1, 5, 15]
 
 FEATURES_SAMPLER_COMBOS = [
 #   ("struct", "random_struct"),
-    ("struct+input", "random_struct"),
-#   ("struct+input", "qt_then_rd"),
+#   ("struct+input", "random_struct"),
+   ("struct+input", "qt_then_rd"),
 ]
 MODELS = ["rf", "gbm", "cat"]
 # MODELS = [ "rf"]
 TRIALS = range(1, 6)  # 1 ~ 5
 SEED = 52
 N_BINS = 200
-
+#--train-ratio
+TRAIN_RATIO = 0.5
+QT_FRAC = 0.25
 # === 로깅 설정 ===
 logging.basicConfig(
     level=logging.INFO,
@@ -67,6 +69,8 @@ for gas in GASES:
                             "--sampler", sampler,
                             "--model", model,
                             "--n-bins", str(N_BINS),
+                            "--train-ratio" , str(TRAIN_RATIO),
+                            "--qt-frac" , str(QT_FRAC)
                         ]
                         all_cmds.append(" ".join(cmd))
 

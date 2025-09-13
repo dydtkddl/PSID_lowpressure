@@ -35,6 +35,7 @@ def main():
 
     # 커맨드 읽기
     commands = cmd_file.read_text(encoding="utf-8").strip().splitlines()
+    print(commands)
     commands = [ x for x in commands if "random_with_input" not in x  ]
     total = len(commands)
     print(f"[INFO] Loaded {total} commands from {cmd_file}")

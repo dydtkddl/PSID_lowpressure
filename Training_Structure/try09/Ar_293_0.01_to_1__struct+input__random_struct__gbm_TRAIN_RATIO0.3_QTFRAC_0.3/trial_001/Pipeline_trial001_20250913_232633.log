@@ -1,0 +1,16 @@
+2025-09-13 23:26:33,124 | INFO | [Data] Loaded: ../Data_collect/DataSet/Ar_293K/Ar_293K_Ar_293_0.01_to_Ar_293_1_dataset.csv | rows=11316 | cols=16
+2025-09-13 23:26:33,124 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-13 23:26:33,126 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 11316 -> 11316
+2025-09-13 23:26:33,127 | INFO | [Seeds] trial=1 | seeds={'seed': 53, 'seed_qt': 1052, 'seed_rd': 2052, 'model_seed': 3052}
+2025-09-13 23:26:33,128 | INFO | [S1 Random-Struct] train=3395 / test=7921 (ratio=0.30)
+2025-09-13 23:26:33,350 | INFO | [Save] sampling scatter & histogram plots
+2025-09-13 23:26:33,353 | INFO | [Model] kind=gbm | params={'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.05, 'loss': 'squared_error', 'max_depth': 5, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 500, 'n_iter_no_change': None, 'random_state': 3052, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2025-09-13 23:26:33,353 | INFO | [Holdout_trial001] Train=3395 | Test=7921
+2025-09-13 23:26:41,612 | INFO | [Timing_trial001] fit_time=8.259s
+2025-09-13 23:26:41,665 | INFO | [Timing_trial001] predict_time=0.052s
+2025-09-13 23:26:41,667 | INFO | [Metrics_trial001] R2=0.932668 | MAE=0.020804 | RMSE=0.008079 | MAPE%=73544616.721
+2025-09-13 23:26:41,731 | INFO | [Save] predictions_holdout_trial001.csv
+2025-09-13 23:26:41,732 | INFO | [Save] metrics_holdout_trial001.csv
+2025-09-13 23:26:41,733 | INFO | [Save] feature_importances_holdout_trial001.csv
+2025-09-13 23:26:41,733 | INFO | [Save] model_params_trial001.json
+2025-09-13 23:26:41,733 | INFO | [Done] trial=1 | outputs at: try09/Ar_293_0.01_to_1__struct+input__random_struct__gbm_TRAIN_RATIO0.3_QTFRAC_0.3/trial_001

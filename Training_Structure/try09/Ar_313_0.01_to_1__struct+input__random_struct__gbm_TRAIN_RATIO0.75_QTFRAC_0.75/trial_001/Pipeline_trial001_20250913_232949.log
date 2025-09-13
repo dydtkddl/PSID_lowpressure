@@ -1,0 +1,16 @@
+2025-09-13 23:29:49,095 | INFO | [Data] Loaded: ../Data_collect/DataSet/Ar_313K/Ar_313K_Ar_313_0.01_to_Ar_313_1_dataset.csv | rows=7760 | cols=16
+2025-09-13 23:29:49,096 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-13 23:29:49,097 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 7760 -> 7760
+2025-09-13 23:29:49,098 | INFO | [Seeds] trial=1 | seeds={'seed': 53, 'seed_qt': 1052, 'seed_rd': 2052, 'model_seed': 3052}
+2025-09-13 23:29:49,099 | INFO | [S1 Random-Struct] train=5820 / test=1940 (ratio=0.75)
+2025-09-13 23:29:49,286 | INFO | [Save] sampling scatter & histogram plots
+2025-09-13 23:29:49,288 | INFO | [Model] kind=gbm | params={'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.05, 'loss': 'squared_error', 'max_depth': 5, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 500, 'n_iter_no_change': None, 'random_state': 3052, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2025-09-13 23:29:49,288 | INFO | [Holdout_trial001] Train=5820 | Test=1940
+2025-09-13 23:30:03,717 | INFO | [Timing_trial001] fit_time=14.429s
+2025-09-13 23:30:03,731 | INFO | [Timing_trial001] predict_time=0.014s
+2025-09-13 23:30:03,734 | INFO | [Metrics_trial001] R2=0.961956 | MAE=0.011126 | RMSE=0.002104 | MAPE%=3.086
+2025-09-13 23:30:03,756 | INFO | [Save] predictions_holdout_trial001.csv
+2025-09-13 23:30:03,757 | INFO | [Save] metrics_holdout_trial001.csv
+2025-09-13 23:30:03,758 | INFO | [Save] feature_importances_holdout_trial001.csv
+2025-09-13 23:30:03,758 | INFO | [Save] model_params_trial001.json
+2025-09-13 23:30:03,758 | INFO | [Done] trial=1 | outputs at: try09/Ar_313_0.01_to_1__struct+input__random_struct__gbm_TRAIN_RATIO0.75_QTFRAC_0.75/trial_001

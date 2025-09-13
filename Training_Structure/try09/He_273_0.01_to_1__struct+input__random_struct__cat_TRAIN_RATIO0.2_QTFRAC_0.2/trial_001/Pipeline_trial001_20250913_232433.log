@@ -1,0 +1,8 @@
+2025-09-13 23:24:33,944 | INFO | [Data] Loaded: ../Data_collect/DataSet/He_273K/He_273K_He_273_0.01_to_He_273_1_dataset.csv | rows=10181 | cols=16
+2025-09-13 23:24:33,944 | INFO | [Features] Using 13 features: ['LCD', 'PLD', 'LFPD', 'cm3_g', 'ASA_m2_cm3', 'ASA_m2_g', 'NASA_m2_cm3', 'NASA_m2_g', 'AV_VF', 'AV_cm3_g', 'NAV_cm3_g', 'Has_OMS', 'Input']
+2025-09-13 23:24:33,945 | INFO | [Preprocess] Drop NaN rows (FEATURES+TARGET): 10181 -> 10181
+2025-09-13 23:24:33,947 | INFO | [Seeds] trial=1 | seeds={'seed': 53, 'seed_qt': 1052, 'seed_rd': 2052, 'model_seed': 3052}
+2025-09-13 23:24:33,948 | INFO | [S1 Random-Struct] train=2036 / test=8145 (ratio=0.20)
+2025-09-13 23:24:34,160 | INFO | [Save] sampling scatter & histogram plots
+2025-09-13 23:24:34,163 | INFO | [Model] kind=cat | params={'iterations': 500, 'learning_rate': 0.05, 'depth': 8, 'loss_function': 'RMSE', 'random_seed': 3052, 'verbose': False}
+2025-09-13 23:24:34,163 | INFO | [Holdout_trial001] Train=2036 | Test=8145
