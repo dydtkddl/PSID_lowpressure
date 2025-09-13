@@ -35,8 +35,8 @@ def generate_commands():
                                 for HIGH  in HIGHS:
                                     cmd = (
                                         f"python pipeline_single_trial_QT_LOGSAMPLE.py "
-                                        f"--data ../Data_collect/DataSet/{gas}_{temp}K/{gas}_{temp}K_{gas}_{temp}_{LOW}_to_{gas}_{temp}_{HIGH}_dataset.csv "
-                                        f"--outdir try09_all/{gas}_{temp}_{LOW}_to_{HIGH}__{INPUT}__{sampling}__{model}_TRAIN_RATIO{train_ratio}_QTFRAC_{train_ratio} "
+                                        f"--data ../Data_collect/DataSet_PLDSCREENED/{gas}_{temp}K/{gas}_{temp}K_{gas}_{temp}_{LOW}_to_{gas}_{temp}_{HIGH}_dataset.csv "
+                                        f"--outdir try10/{gas}_{temp}_{LOW}_to_{HIGH}__{INPUT}__{sampling}__{model}_TRAIN_RATIO{train_ratio}_QTFRAC_{train_ratio} "
                                         f"--seed-base {SEED} --features {INPUT} --sample {sampling} "
                                         f"--model {model} --n-bins 200 --train-ratio {train_ratio} --qt-frac {train_ratio} --trial {trial}"
                                     )
