@@ -1,0 +1,3 @@
+name,gas,temp,pressure,cutoff,path,abs_mol_per_kg_framework,abs_molecules_per_uc,abs_mg_per_g_framework,abs_cm3STP_per_g,abs_cm3STP_per_cm3
+YUTDUO_clean_COREMOF,argon,293.0,1.0,14.0,YUTDUO_clean_COREMOF_argon_293.0K_1.0bar_14.0/Output/System_0,1.4280971805,2.8959861111,57.0496261652,32.0093355681,44.6426054555
+YUTDUO_clean,argon,293.0,1.0,14.0,YUTDUO_clean_argon_293.0K_1.0bar_14.0/Output/System_0,0.1488142831,0.301775,5.9448329813,3.3355197323,4.6519636989
