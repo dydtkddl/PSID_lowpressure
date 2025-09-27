@@ -1,0 +1,9 @@
+---- START at 2025-09-19 19:03:38, Target=3/3 ----
+[1/3] YUTDUO_clean_COREMOF_argon_293.0K_1.0bar_14.0 FAILED: Command '/home/yongsang/PSID_SIMULATION_TOOLS/RASPA/bin/simulate simulation.input' died with <Signals.SIGINT: 2>.
+[2/3] YUTDUO_clean_argon_293.0K_1.0bar_14.0 FAILED: Command '/home/yongsang/PSID_SIMULATION_TOOLS/RASPA/bin/simulate simulation.input' died with <Signals.SIGINT: 2>.
+
+---- RESTART at 2025-09-19 19:03:47, Remain=3/3 ----
+[2/3] YUTDUO_clean_argon_293.0K_1.0bar_14.0 Done. TimeForThis=217.0s, Completed=1/3, ETA=2025-09-19 19:14:38
+[3/3] __pycache__ FAILED: Command '/home/yongsang/PSID_SIMULATION_TOOLS/RASPA/bin/simulate simulation.input' died with <Signals.SIGSEGV: 11>.
+[1/3] YUTDUO_clean_COREMOF_argon_293.0K_1.0bar_14.0 Done. TimeForThis=610.2s, Completed=2/3, ETA=2025-09-19 19:19:03
+---- ALL DONE at 2025-09-19 19:13:58 ----

@@ -20,7 +20,7 @@ def generate_commands():
     MODELS = ["cat" ,"rf", "gbm"]
     SEED = 52
     TRIALS = [1, 2, 3, 4, 5]
-    LOWS = [ 0.01, 0.05, 0.1, 0.5]
+    LOWS =["Henry"]# [ 0.01, 0.05, 0.1, 0.5]
     HIGHS = [1,5, 15]
 #    HIGHS = [5]
     commands = []
@@ -40,7 +40,7 @@ def generate_commands():
                                     cmd = (
                                         f"python pipeline_single_trial_QT_LOGSAMPLE.py "
                                         f"--data ../Data_collect/DataSet_PLDSCREENED/{gas}_{temp}K/{gas}_{temp}K_{gas}_{temp}_{LOW}_to_{gas}_{temp}_{HIGH}_dataset.csv "
-                                        f"--outdir try11/{gas}_{temp}_{LOW}_to_{HIGH}__{INPUT}__{sampling}__{model}_TRAIN_RATIO{train_ratio}_QTFRAC_{train_ratio} "
+                                        f"--outdir try13/{gas}_{temp}_{LOW}_to_{HIGH}__{INPUT}__{sampling}__{model}_TRAIN_RATIO{train_ratio}_QTFRAC_{train_ratio} "
                                         f"--seed-base {SEED} --features {INPUT} --sample {sampling} "
                                         f"--model {model} --n-bins 200 --train-ratio {train_ratio} --qt-frac {train_ratio2} --trial {trial}"
                                     )
