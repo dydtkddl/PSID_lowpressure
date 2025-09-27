@@ -5,22 +5,25 @@ import math
 
 
 def generate_commands():
-    TEMPS = [273,  293, 313]
-    GASES = ["He", "Ar"]
+    # TEMPS = [273,  293, 313]
+    TEMPS = [273,  313]
+    # GASES = ["He", "Ar"]
+    GASES = ["Ar"]
 #    GASES = ["N2", "O2", "H2"]
-    TRAINRATIOS = [0.05, 0.1 , 0.15 , 0.2 , 0.25 ,0.3 ,0.35 ,0.4 ,0.45, 0.5 ,0.55 ,0.6, 0.65, 0.7, 0.75, 0.8]
+    # TRAINRATIOS = [0.05, 0.1 , 0.15 , 0.2 , 0.25 ,0.3 ,0.35 ,0.4 ,0.45, 0.5 ,0.55 ,0.6, 0.65, 0.7, 0.75, 0.8]
     TRAINRATIOS = [0.8]
 
     SAMPLINGS = [
         ("qt_then_rd", "struct+input"),
-        ("random_with_input", "struct+input"),
-        ("random_struct", "struct"),
+        # ("random_with_input", "struct+input"),
+        # ("random_struct", "struct"),
                  ]
     # SAMPLINGS = ["random_struct"]
-    MODELS = ["cat" ,"rf", "gbm"]
+    # MODELS = ["cat" ,"rf", "gbm"]
+    MODELS = ["cat" ]
     SEED = 52
     TRIALS = [1, 2, 3, 4, 5]
-    LOWS = [ 0.01, 0.05, 0.1, 0.5]
+    LOWS = [ "Henry",  0.01, 0.05, 0.1, 0.5]
     HIGHS = [1,5, 15]
 #    HIGHS = [5]
     commands = []
@@ -40,7 +43,7 @@ def generate_commands():
                                     cmd = (
                                         f"python pipeline_single_trial_QT_LOGSAMPLE.py "
                                         f"--data ../Data_collect/DataSet_PLDSCREENED/{gas}_{temp}K/{gas}_{temp}K_{gas}_{temp}_{LOW}_to_{gas}_{temp}_{HIGH}_dataset.csv "
-                                        f"--outdir try11/{gas}_{temp}_{LOW}_to_{HIGH}__{INPUT}__{sampling}__{model}_TRAIN_RATIO{train_ratio}_QTFRAC_{train_ratio} "
+                                        f"--outdir try14_Ar273_and_313_re_LOWsensitivity/{gas}_{temp}_{LOW}_to_{HIGH}__{INPUT}__{sampling}__{model}_TRAIN_RATIO{train_ratio}_QTFRAC_{train_ratio} "
                                         f"--seed-base {SEED} --features {INPUT} --sample {sampling} "
                                         f"--model {model} --n-bins 200 --train-ratio {train_ratio} --qt-frac {train_ratio2} --trial {trial}"
                                     )
