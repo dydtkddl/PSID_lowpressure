@@ -1,0 +1,873 @@
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+
+from pathlib import Path
+
+
+
+# 설정 변수 (코드는 변경 없음)
+
+TRAIN_RATIOS = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8]
+
+TARGET_PRESSURE = 15
+
+CATBOOST_DIR = Path("../try15_Ar313_0.01_15bar_Isotherm/") 
+
+COMPTIMES_PATH = Path("./ComputationTimeSimulation/Ar_313K_TIME_20250929/Final_Computation_Time_Pivot_Table_Reordered.csv")
+
+TARGET_COL = f'{TARGET_PRESSURE}bar_AR_313_CORE'
+
+
+
+# 1. COMPTIMES DataFrame 준비 (코드 변경 없음)
+
+try:
+
+    COMPTIMES = pd.read_csv(COMPTIMES_PATH)
+
+except FileNotFoundError:
+
+    print(f"Error: Computation time file not found at {COMPTIMES_PATH}. Cannot proceed.")
+
+    raise
+
+
+
+COMPTIMES_INDEXED = COMPTIMES.set_index('MOF')[[TARGET_COL]]
+
+results = []
+
+
+
+# ----------------------------------------------------
+
+# 2. GCMC 시간 계산 (0.05 ~ 0.8 Ratio) (코드 변경 없음)
+
+# ----------------------------------------------------
+
+for TRAIN_RATIO in TRAIN_RATIOS:
+
+    dir_name = f'Ar_313_0.01_to_{TARGET_PRESSURE}__struct+input__qt_then_rd__cat_TRAIN_RATIO{TRAIN_RATIO}_QTFRAC_{TRAIN_RATIO}'
+
+    base_path = CATBOOST_DIR / dir_name / 'trial_001'
+
+    
+
+    try:
+
+        TRAIN_DF = pd.read_csv(base_path / 'df_train.csv')
+
+        PRED_DF = pd.read_csv(base_path / 'predictions_holdout_trial001.csv')
+
+    except FileNotFoundError:
+
+        print(f"Warning: ML files for TRAIN_RATIO {TRAIN_RATIO} not found. Skipping.")
+
+        continue
+
+
+
+    PRED_MOFS = set(PRED_DF['filename'])
+
+    TRAIN_MOFS_GCMC = set(TRAIN_DF['filename']) - PRED_MOFS
+
+    
+
+    if not TRAIN_MOFS_GCMC:
+
+        GCMC_SAMPLING_TIME = 0.0
+
+    else:
+
+        df_gcmc_mofs = pd.DataFrame(list(TRAIN_MOFS_GCMC), columns=['MOF']).set_index('MOF')
+
+        df_merged = df_gcmc_mofs.join(COMPTIMES_INDEXED, how='inner')
+
+        GCMC_SAMPLING_TIME = df_merged[TARGET_COL].sum()
+
+    
+
+    GCMC_SAMPLING_TIME_H = GCMC_SAMPLING_TIME / 3600
+
+    
+
+    print(f"TRAIN_RATIO: {TRAIN_RATIO:.2f}, MOFs: {len(TRAIN_MOFS_GCMC)}, GCMC_TIME: {GCMC_SAMPLING_TIME_H:.2f} hours")
+
+    
+
+    results.append({
+
+        'TRAIN_RATIO': TRAIN_RATIO,
+
+        'GCMC_SAMPLING_TIME_H': GCMC_SAMPLING_TIME_H,
+
+        'Dataset': 'ML Subset'
+
+    })
+
+
+
+# ----------------------------------------------------
+
+# 3. 100% (Ratio = 1.0) 전체 GCMC 시간 계산 및 추가 (코드 변경 없음)
+
+# ----------------------------------------------------
+
+TOTAL_GCMC_TIME_S = COMPTIMES_INDEXED[TARGET_COL].sum()
+
+TOTAL_GCMC_TIME_H = TOTAL_GCMC_TIME_S / 3600
+
+
+
+print(f"\nTOTAL GCMC TIME (Ratio 1.0): {TOTAL_GCMC_TIME_H:.2f} hours")
+
+
+
+results.append({
+
+    'TRAIN_RATIO': 1.0,
+
+    'GCMC_SAMPLING_TIME_H': TOTAL_GCMC_TIME_H,
+
+    'Dataset': 'Total GCMC (1.0)'
+
+})
+
+
+
+df_results = pd.DataFrame(results)
+
+
+
+df_results['TRAIN_RATIO_STR'] = df_results['TRAIN_RATIO'].astype(str)
+
+x_order = [str(r) for r in TRAIN_RATIOS] + ['1.0']
+
+df_results['TRAIN_RATIO_STR'] = pd.Categorical(df_results['TRAIN_RATIO_STR'], categories=x_order, ordered=True)
+
+
+
+
+
+# ----------------------------------------------------
+
+# 4. 결과 시각화 (Total GCMC에도 Bar plot 추가)
+
+# ----------------------------------------------------
+
+
+
+plt.figure(figsize=(14, 8))
+
+
+
+# 1. Bar plot: 모든 데이터 (ML Subset + Total GCMC)를 검은색 막대로 그립니다.
+
+# 'Dataset' 컬럼을 hue로 사용하여, 각 데이터셋에 다른 색상을 지정합니다.
+
+# ML Subset은 'lightgray'로, Total GCMC (1.0)은 'black'으로 지정합니다.
+
+custom_palette = {'ML Subset': 'lightgray', 'Total GCMC (1.0)': 'black'}
+
+
+
+sns.barplot(
+
+    x='TRAIN_RATIO_STR',
+
+    y='GCMC_SAMPLING_TIME_H',
+
+    hue='Dataset', # Dataset 기준으로 색상을 나눔
+
+    data=df_results,
+
+    palette=custom_palette,
+
+    dodge=False, # 막대가 겹쳐지지 않도록
+
+    # 범례에 Bar plot이 두 번 표시되는 것을 막기 위해 label은 추가하지 않음
+
+)
+
+
+
+# 2. Line plot: ML Subset 데이터 (파란색 라인)
+
+# 이 플롯은 Bar plot 위에 덧그려져 추세를 보여줍니다.
+
+sns.lineplot(
+
+    x='TRAIN_RATIO_STR',
+
+    y='GCMC_SAMPLING_TIME_H',
+
+    data=df_results[df_results['Dataset'] == 'ML Subset'],
+
+    marker='o',
+
+    color='blue',
+
+    linewidth=2,
+
+    linestyle='-',
+
+    label='GCMC Time for Training Subset'
+
+)
+
+
+
+# 3. Scatterplot: Total GCMC (1.0) 데이터 (빨간색 다이아몬드)
+
+# 이 플롯은 Bar plot 위에 덧그려져 1.0 지점을 강조합니다.
+
+sns.scatterplot(
+
+    x='TRAIN_RATIO_STR',
+
+    y='GCMC_SAMPLING_TIME_H',
+
+    data=df_results[df_results['Dataset'] == 'Total GCMC (1.0)'],
+
+    marker='D', 
+
+    s=200,      
+
+    color='red',
+
+    label='Total GCMC Time (Ratio 1.0)',
+
+    zorder=5 
+
+)
+
+
+
+plt.title('Total GCMC Sampling Time vs. Training Data Ratio', fontsize=18)
+
+plt.xlabel('Training Data Ratio', fontsize=16)
+
+plt.ylabel(f'Total GCMC Time (Hours)', fontsize=16)
+
+
+
+# Barplot에서 생성된 범례 항목을 수동으로 제거하고 Line/Scatterplot 범례만 표시
+
+handles, labels = plt.gca().get_legend_handles_labels()
+
+# Bar plot 항목 ('ML Subset'과 'Total GCMC (1.0)'의 Bar)을 제거하고 Line/Scatterplot 항목만 남깁니다.
+
+line_scatter_handles = [h for i, h in enumerate(handles) if labels[i] not in ['ML Subset', 'Total GCMC (1.0)']]
+
+line_scatter_labels = [l for l in labels if l not in ['ML Subset', 'Total GCMC (1.0)']]
+
+
+
+plt.legend(line_scatter_handles, line_scatter_labels, 
+
+           title='Data Source', loc='upper left', fontsize=12, title_fontsize=12)
+
+
+
+plt.grid(True, linestyle='--', alpha=0.6)
+
+plt.ylim(0)
+
+plt.xticks(fontsize=12)
+
+plt.yticks(fontsize=12)
+
+plt.tight_layout()
+
+plt.show() 
+
+
+
+print("\nGCMC Sampling Time visualization with Bar & Line chart (Final style) completed. Total GCMC (1.0) now has a black bar.")import pandas as pd
+
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+
+from pathlib import Path
+
+
+
+# 설정 변수 (코드는 변경 없음)
+
+TRAIN_RATIOS = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8]
+
+TARGET_PRESSURE = 5
+
+CATBOOST_DIR = Path("../try15_Ar313_0.01_15bar_Isotherm/") 
+
+COMPTIMES_PATH = Path("./ComputationTimeSimulation/Ar_313K_TIME_20250929/Final_Computation_Time_Pivot_Table_Reordered.csv")
+
+TARGET_COL = f'{TARGET_PRESSURE}bar_AR_313_CORE'
+
+
+
+# 1. COMPTIMES DataFrame 준비 (코드 변경 없음)
+
+try:
+
+    COMPTIMES = pd.read_csv(COMPTIMES_PATH)
+
+except FileNotFoundError:
+
+    print(f"Error: Computation time file not found at {COMPTIMES_PATH}. Cannot proceed.")
+
+    raise
+
+
+
+COMPTIMES_INDEXED = COMPTIMES.set_index('MOF')[[TARGET_COL]]
+
+results = []
+
+
+
+# ----------------------------------------------------
+
+# 2. GCMC 시간 계산 (0.05 ~ 0.8 Ratio) (코드 변경 없음)
+
+# ----------------------------------------------------
+
+for TRAIN_RATIO in TRAIN_RATIOS:
+
+    dir_name = f'Ar_313_0.01_to_{TARGET_PRESSURE}__struct+input__qt_then_rd__cat_TRAIN_RATIO{TRAIN_RATIO}_QTFRAC_{TRAIN_RATIO}'
+
+    base_path = CATBOOST_DIR / dir_name / 'trial_001'
+
+    
+
+    try:
+
+        TRAIN_DF = pd.read_csv(base_path / 'df_train.csv')
+
+        PRED_DF = pd.read_csv(base_path / 'predictions_holdout_trial001.csv')
+
+    except FileNotFoundError:
+
+        print(f"Warning: ML files for TRAIN_RATIO {TRAIN_RATIO} not found. Skipping.")
+
+        continue
+
+
+
+    PRED_MOFS = set(PRED_DF['filename'])
+
+    TRAIN_MOFS_GCMC = set(TRAIN_DF['filename']) - PRED_MOFS
+
+    
+
+    if not TRAIN_MOFS_GCMC:
+
+        GCMC_SAMPLING_TIME = 0.0
+
+    else:
+
+        df_gcmc_mofs = pd.DataFrame(list(TRAIN_MOFS_GCMC), columns=['MOF']).set_index('MOF')
+
+        df_merged = df_gcmc_mofs.join(COMPTIMES_INDEXED, how='inner')
+
+        GCMC_SAMPLING_TIME = df_merged[TARGET_COL].sum()
+
+    
+
+    GCMC_SAMPLING_TIME_H = GCMC_SAMPLING_TIME / 3600
+
+    
+
+    print(f"TRAIN_RATIO: {TRAIN_RATIO:.2f}, MOFs: {len(TRAIN_MOFS_GCMC)}, GCMC_TIME: {GCMC_SAMPLING_TIME_H:.2f} hours")
+
+    
+
+    results.append({
+
+        'TRAIN_RATIO': TRAIN_RATIO,
+
+        'GCMC_SAMPLING_TIME_H': GCMC_SAMPLING_TIME_H,
+
+        'Dataset': 'ML Subset'
+
+    })
+
+
+
+# ----------------------------------------------------
+
+# 3. 100% (Ratio = 1.0) 전체 GCMC 시간 계산 및 추가 (코드 변경 없음)
+
+# ----------------------------------------------------
+
+TOTAL_GCMC_TIME_S = COMPTIMES_INDEXED[TARGET_COL].sum()
+
+TOTAL_GCMC_TIME_H = TOTAL_GCMC_TIME_S / 3600
+
+
+
+print(f"\nTOTAL GCMC TIME (Ratio 1.0): {TOTAL_GCMC_TIME_H:.2f} hours")
+
+
+
+results.append({
+
+    'TRAIN_RATIO': 1.0,
+
+    'GCMC_SAMPLING_TIME_H': TOTAL_GCMC_TIME_H,
+
+    'Dataset': 'Total GCMC (1.0)'
+
+})
+
+
+
+df_results = pd.DataFrame(results)
+
+
+
+df_results['TRAIN_RATIO_STR'] = df_results['TRAIN_RATIO'].astype(str)
+
+x_order = [str(r) for r in TRAIN_RATIOS] + ['1.0']
+
+df_results['TRAIN_RATIO_STR'] = pd.Categorical(df_results['TRAIN_RATIO_STR'], categories=x_order, ordered=True)
+
+
+
+
+
+# ----------------------------------------------------
+
+# 4. 결과 시각화 (Total GCMC에도 Bar plot 추가)
+
+# ----------------------------------------------------
+
+
+
+plt.figure(figsize=(14, 8))
+
+
+
+# 1. Bar plot: 모든 데이터 (ML Subset + Total GCMC)를 검은색 막대로 그립니다.
+
+# 'Dataset' 컬럼을 hue로 사용하여, 각 데이터셋에 다른 색상을 지정합니다.
+
+# ML Subset은 'lightgray'로, Total GCMC (1.0)은 'black'으로 지정합니다.
+
+custom_palette = {'ML Subset': 'lightgray', 'Total GCMC (1.0)': 'black'}
+
+
+
+sns.barplot(
+
+    x='TRAIN_RATIO_STR',
+
+    y='GCMC_SAMPLING_TIME_H',
+
+    hue='Dataset', # Dataset 기준으로 색상을 나눔
+
+    data=df_results,
+
+    palette=custom_palette,
+
+    dodge=False, # 막대가 겹쳐지지 않도록
+
+    # 범례에 Bar plot이 두 번 표시되는 것을 막기 위해 label은 추가하지 않음
+
+)
+
+
+
+# 2. Line plot: ML Subset 데이터 (파란색 라인)
+
+# 이 플롯은 Bar plot 위에 덧그려져 추세를 보여줍니다.
+
+sns.lineplot(
+
+    x='TRAIN_RATIO_STR',
+
+    y='GCMC_SAMPLING_TIME_H',
+
+    data=df_results[df_results['Dataset'] == 'ML Subset'],
+
+    marker='o',
+
+    color='blue',
+
+    linewidth=2,
+
+    linestyle='-',
+
+    label='GCMC Time for Training Subset'
+
+)
+
+
+
+# 3. Scatterplot: Total GCMC (1.0) 데이터 (빨간색 다이아몬드)
+
+# 이 플롯은 Bar plot 위에 덧그려져 1.0 지점을 강조합니다.
+
+sns.scatterplot(
+
+    x='TRAIN_RATIO_STR',
+
+    y='GCMC_SAMPLING_TIME_H',
+
+    data=df_results[df_results['Dataset'] == 'Total GCMC (1.0)'],
+
+    marker='D', 
+
+    s=200,      
+
+    color='red',
+
+    label='Total GCMC Time (Ratio 1.0)',
+
+    zorder=5 
+
+)
+
+
+
+plt.title('Total GCMC Sampling Time vs. Training Data Ratio', fontsize=18)
+
+plt.xlabel('Training Data Ratio', fontsize=16)
+
+plt.ylabel(f'Total GCMC Time (Hours)', fontsize=16)
+
+
+
+# Barplot에서 생성된 범례 항목을 수동으로 제거하고 Line/Scatterplot 범례만 표시
+
+handles, labels = plt.gca().get_legend_handles_labels()
+
+# Bar plot 항목 ('ML Subset'과 'Total GCMC (1.0)'의 Bar)을 제거하고 Line/Scatterplot 항목만 남깁니다.
+
+line_scatter_handles = [h for i, h in enumerate(handles) if labels[i] not in ['ML Subset', 'Total GCMC (1.0)']]
+
+line_scatter_labels = [l for l in labels if l not in ['ML Subset', 'Total GCMC (1.0)']]
+
+
+
+plt.legend(line_scatter_handles, line_scatter_labels, 
+
+           title='Data Source', loc='upper left', fontsize=12, title_fontsize=12)
+
+
+
+plt.grid(True, linestyle='--', alpha=0.6)
+
+plt.ylim(0)
+
+plt.xticks(fontsize=12)
+
+plt.yticks(fontsize=12)
+
+plt.tight_layout()
+
+plt.show() 
+
+
+
+print("\nGCMC Sampling Time visualization with Bar & Line chart (Final style) completed. Total GCMC (1.0) now has a black bar.")import pandas as pd
+
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+
+from pathlib import Path
+
+
+
+# 설정 변수 (코드는 변경 없음)
+
+TRAIN_RATIOS = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8]
+
+TARGET_PRESSURE = 15
+
+CATBOOST_DIR = Path("../try15_Ar313_0.01_15bar_Isotherm/") 
+
+COMPTIMES_PATH = Path("./ComputationTimeSimulation/Ar_313K_TIME_20250929/Final_Computation_Time_Pivot_Table_Reordered.csv")
+
+TARGET_COL ="time_below_50_313_1"
+
+
+
+# 1. COMPTIMES DataFrame 준비 (코드 변경 없음)
+
+try:
+
+    COMPTIMES = pd.read_csv(COMPTIMES_PATH)
+
+except FileNotFoundError:
+
+    print(f"Error: Computation time file not found at {COMPTIMES_PATH}. Cannot proceed.")
+
+    raise
+
+
+
+COMPTIMES_INDEXED = COMPTIMES.set_index('MOF')[[TARGET_COL]]
+
+results = []
+
+
+
+# ----------------------------------------------------
+
+# 2. GCMC 시간 계산 (0.05 ~ 0.8 Ratio) (코드 변경 없음)
+
+# ----------------------------------------------------
+
+for TRAIN_RATIO in TRAIN_RATIOS:
+
+    dir_name = f'Ar_313_0.01_to_{TARGET_PRESSURE}__struct+input__qt_then_rd__cat_TRAIN_RATIO{TRAIN_RATIO}_QTFRAC_{TRAIN_RATIO}'
+
+    base_path = CATBOOST_DIR / dir_name / 'trial_001'
+
+    
+
+    try:
+
+        TRAIN_DF = pd.read_csv(base_path / 'df_train.csv')
+
+        PRED_DF = pd.read_csv(base_path / 'predictions_holdout_trial001.csv')
+
+    except FileNotFoundError:
+
+        print(f"Warning: ML files for TRAIN_RATIO {TRAIN_RATIO} not found. Skipping.")
+
+        continue
+
+
+
+    PRED_MOFS = set(PRED_DF['filename'])
+
+    TRAIN_MOFS_GCMC = set(TRAIN_DF['filename']) - PRED_MOFS
+
+    
+
+    if not TRAIN_MOFS_GCMC:
+
+        GCMC_SAMPLING_TIME = 0.0
+
+    else:
+
+        df_gcmc_mofs = pd.DataFrame(list(TRAIN_MOFS_GCMC), columns=['MOF']).set_index('MOF')
+
+        df_merged = df_gcmc_mofs.join(COMPTIMES_INDEXED, how='inner')
+
+        GCMC_SAMPLING_TIME = df_merged[TARGET_COL].sum()
+
+    
+
+    GCMC_SAMPLING_TIME_H = GCMC_SAMPLING_TIME / 3600
+
+    
+
+    print(f"TRAIN_RATIO: {TRAIN_RATIO:.2f}, MOFs: {len(TRAIN_MOFS_GCMC)}, GCMC_TIME: {GCMC_SAMPLING_TIME_H:.2f} hours")
+
+    
+
+    results.append({
+
+        'TRAIN_RATIO': TRAIN_RATIO,
+
+        'GCMC_SAMPLING_TIME_H': GCMC_SAMPLING_TIME_H,
+
+        'Dataset': 'ML Subset'
+
+    })
+
+
+
+# ----------------------------------------------------
+
+# 3. 100% (Ratio = 1.0) 전체 GCMC 시간 계산 및 추가 (코드 변경 없음)
+
+# ----------------------------------------------------
+
+TOTAL_GCMC_TIME_S = COMPTIMES_INDEXED[TARGET_COL].sum()
+
+TOTAL_GCMC_TIME_H = TOTAL_GCMC_TIME_S / 3600
+
+
+
+print(f"\nTOTAL GCMC TIME (Ratio 1.0): {TOTAL_GCMC_TIME_H:.2f} hours")
+
+
+
+results.append({
+
+    'TRAIN_RATIO': 1.0,
+
+    'GCMC_SAMPLING_TIME_H': TOTAL_GCMC_TIME_H,
+
+    'Dataset': 'Total GCMC (1.0)'
+
+})
+
+
+
+df_results = pd.DataFrame(results)
+
+
+
+df_results['TRAIN_RATIO_STR'] = df_results['TRAIN_RATIO'].astype(str)
+
+x_order = [str(r) for r in TRAIN_RATIOS] + ['1.0']
+
+df_results['TRAIN_RATIO_STR'] = pd.Categorical(df_results['TRAIN_RATIO_STR'], categories=x_order, ordered=True)
+
+
+
+
+
+# ----------------------------------------------------
+
+# 4. 결과 시각화 (Total GCMC에도 Bar plot 추가)
+
+# ----------------------------------------------------
+
+
+
+plt.figure(figsize=(14, 8))
+
+
+
+# 1. Bar plot: 모든 데이터 (ML Subset + Total GCMC)를 검은색 막대로 그립니다.
+
+# 'Dataset' 컬럼을 hue로 사용하여, 각 데이터셋에 다른 색상을 지정합니다.
+
+# ML Subset은 'lightgray'로, Total GCMC (1.0)은 'black'으로 지정합니다.
+
+custom_palette = {'ML Subset': 'lightgray', 'Total GCMC (1.0)': 'black'}
+
+
+
+sns.barplot(
+
+    x='TRAIN_RATIO_STR',
+
+    y='GCMC_SAMPLING_TIME_H',
+
+    hue='Dataset', # Dataset 기준으로 색상을 나눔
+
+    data=df_results,
+
+    palette=custom_palette,
+
+    dodge=False, # 막대가 겹쳐지지 않도록
+
+    # 범례에 Bar plot이 두 번 표시되는 것을 막기 위해 label은 추가하지 않음
+
+)
+
+
+
+# 2. Line plot: ML Subset 데이터 (파란색 라인)
+
+# 이 플롯은 Bar plot 위에 덧그려져 추세를 보여줍니다.
+
+sns.lineplot(
+
+    x='TRAIN_RATIO_STR',
+
+    y='GCMC_SAMPLING_TIME_H',
+
+    data=df_results[df_results['Dataset'] == 'ML Subset'],
+
+    marker='o',
+
+    color='blue',
+
+    linewidth=2,
+
+    linestyle='-',
+
+    label='GCMC Time for Training Subset'
+
+)
+
+
+
+# 3. Scatterplot: Total GCMC (1.0) 데이터 (빨간색 다이아몬드)
+
+# 이 플롯은 Bar plot 위에 덧그려져 1.0 지점을 강조합니다.
+
+sns.scatterplot(
+
+    x='TRAIN_RATIO_STR',
+
+    y='GCMC_SAMPLING_TIME_H',
+
+    data=df_results[df_results['Dataset'] == 'Total GCMC (1.0)'],
+
+    marker='D', 
+
+    s=200,      
+
+    color='red',
+
+    label='Total GCMC Time (Ratio 1.0)',
+
+    zorder=5 
+
+)
+
+
+
+plt.title('Total GCMC Sampling Time vs. Training Data Ratio', fontsize=18)
+
+plt.xlabel('Training Data Ratio', fontsize=16)
+
+plt.ylabel(f'Total GCMC Time (Hours)', fontsize=16)
+
+
+
+# Barplot에서 생성된 범례 항목을 수동으로 제거하고 Line/Scatterplot 범례만 표시
+
+handles, labels = plt.gca().get_legend_handles_labels()
+
+# Bar plot 항목 ('ML Subset'과 'Total GCMC (1.0)'의 Bar)을 제거하고 Line/Scatterplot 항목만 남깁니다.
+
+line_scatter_handles = [h for i, h in enumerate(handles) if labels[i] not in ['ML Subset', 'Total GCMC (1.0)']]
+
+line_scatter_labels = [l for l in labels if l not in ['ML Subset', 'Total GCMC (1.0)']]
+
+
+
+plt.legend(line_scatter_handles, line_scatter_labels, 
+
+           title='Data Source', loc='upper left', fontsize=12, title_fontsize=12)
+
+
+
+plt.grid(True, linestyle='--', alpha=0.6)
+
+plt.ylim(0)
+
+plt.xticks(fontsize=12)
+
+plt.yticks(fontsize=12)
+
+plt.tight_layout()
+
+plt.show() 
+
+
+
+print("\nGCMC Sampling Time visualization with Bar & Line chart (Final style) completed. Total GCMC (1.0) now has a black bar.")
+
+이때 같은 Fraction이면 1,5,15bar순으로 스택되어 바가그려지게
+
+그리고 최상단은 Line 으로 이어지게
+
+이때 각기 다른 압력 시간의 색은 적절하게 다르게 맞춰주고
+
+예쁘게 오리진스타일로 완전 예쁘게 디자인 신경써서 그려줘야해
