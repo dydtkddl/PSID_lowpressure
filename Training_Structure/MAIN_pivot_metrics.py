@@ -17,7 +17,7 @@ def process_metrics(input_file: str, output_file: str):
     logging.info(f"Data loaded with {len(df)} rows and {len(df.columns)} columns from {input_file}")
 
     # 정렬 기준
-    sort_cols = ["GAS", "TEMP", "MODEL", "SAMPLING", "HIGH", "LOW"]
+    sort_cols = ["GAS", "TEMP", "MODEL", "SAMPLING", "HIGH", "LOW", "FRACTION"]
 
     # 정렬 (tqdm 사용)
     for col in tqdm(sort_cols, desc="Sorting step-by-step"):
@@ -29,7 +29,7 @@ def process_metrics(input_file: str, output_file: str):
 
     # HIGH를 컬럼으로 pivot
     df_pivot = df_sorted.pivot(
-        index=["GAS", "TEMP", "MODEL", "SAMPLING", "LOW"],
+        index=["GAS", "TEMP", "MODEL", "SAMPLING", "LOW", "FRACTION"],
         columns="HIGH",
         values=["R2_MEAN", "R2_STD", "MAE_MEAN", "MAE_STD", "INPUT"]
     )

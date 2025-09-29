@@ -568,6 +568,8 @@ def main():
     # Load
     
     df = pd.read_csv(args.data)
+    if "filename" not in df.columns:
+        df.rename(columns={'name': 'filename'}, inplace=True)
     mis_lis = ["BIWSEG_ion_b","LETQAE01_ion_b","VEWLAM_clean","ja406030p_si_007_manual","HIHGEM_manual","ja406030p_si_002_manual","POZHUI_ion_b","DONNAW01_SL",]
     if "filename" in df.columns:
         before = len(df)

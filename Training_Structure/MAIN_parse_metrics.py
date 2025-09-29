@@ -13,8 +13,9 @@ def process_dirname(dirname):
     LOW = SPL[2]
     HIGH = SPL[4]
     INPUT = SPL[6]
-    SAMPLING = "_".join(SPL[8:-2])
-    MODEL = SPL[-1]
+    SAMPLING = "_".join(SPL[8:-5])
+    FRACTION = SPL[-3]
+    MODEL = SPL[-5]
     return {
         "GAS": GAS,
         "TEMP": TEMP,
@@ -23,6 +24,7 @@ def process_dirname(dirname):
         "INPUT": INPUT,
         "SAMPLING": SAMPLING,
         "MODEL": MODEL,
+        "FRACTION" : FRACTION
     }
 
 def main():
