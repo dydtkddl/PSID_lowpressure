@@ -1,0 +1,64 @@
+
+##########################################################################
+#               Crystallographic Information Format file
+#               Produced by PyCifRW module
+#
+#  This is a CIF file.  CIF has been adopted by the International
+#  Union of Crystallography as the standard for data archiving and
+#  transmission.
+#
+#  For information on this file format, follow the CIF links at
+#  http://www.iucr.org
+##########################################################################
+
+data_image0
+
+_cell_length_a                          5.707
+_cell_length_b                          8.749
+_cell_length_c                          13.442
+_cell_angle_alpha                       90
+_cell_angle_beta                        90
+_cell_angle_gamma                       90
+_symmetry_space_group_name_H-M          'P 1'
+_symmetry_int_tables_number             1
+loop_
+  _symmetry_equiv_pos_as_xyz
+         'x, y, z' 
+loop_
+  _atom_site_label
+  _atom_site_occupancy
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_thermal_displace_type
+  _atom_site_B_iso_or_equiv
+  _atom_site_type_symbol
+  _atom_site_charge
+         C1        1.0000    0.34100   0.87300   0.73000   Biso      1.000     C          -0.173225           
+         C2        1.0000    0.84100   0.12700   0.27000   Biso      1.000     C          -0.173601           
+         C3        1.0000    0.99500   0.26130   0.26460   Biso      1.000     C          0.6188670000000001  
+         C4        1.0000    0.49500   0.73870   0.73540   Biso      1.000     C          0.618875  
+         C5        1.0000    0.49500   0.76130   0.23540   Biso      1.000     C          0.618873  
+         C6        1.0000    0.34100   0.62700   0.23000   Biso      1.000     C          -0.173342           
+         C7        1.0000    0.99500   0.23870   0.76460   Biso      1.000     C          0.618877  
+         C8        1.0000    0.84100   0.37300   0.77000   Biso      1.000     C          -0.17357999999999998          
+         Np1       1.0000    0.50000   0.67307   0.47682   Biso      1.000     Np          1.9138    
+         Np2       1.0000    0.50000   0.82693   0.97682   Biso      1.000     Np          1.9134849999999999  
+         Np3       1.0000    0.00000   0.32693   0.52318   Biso      1.000     Np          1.913316  
+         Np4       1.0000    0.00000   0.17307   0.02318   Biso      1.000     Np          1.913729  
+         O1        1.0000    0.73200   0.97050   0.97100   Biso      1.000     O          -0.847391           
+         O2        1.0000    0.10500   0.28800   0.18460   Biso      1.000     O          -0.585166           
+         O3        1.0000    0.23200   0.02950   0.02900   Biso      1.000     O          -0.8474870000000001           
+         O4        1.0000    0.31800   0.93300   0.82540   Biso      1.000     O          -0.356686           
+         O5        1.0000    0.54800   0.66520   0.65560   Biso      1.000     O          -0.5700069999999999           
+         O6        1.0000    0.60500   0.71200   0.81540   Biso      1.000     O          -0.585119           
+         O7        1.0000    0.81800   0.43300   0.67460   Biso      1.000     O          -0.35681  
+         O8        1.0000    0.60500   0.78800   0.31540   Biso      1.000     O          -0.585121           
+         O9        1.0000    0.10500   0.21200   0.68460   Biso      1.000     O          -0.585142           
+         O10       1.0000    0.23200   0.47050   0.52900   Biso      1.000     O          -0.847455           
+         O11       1.0000    0.31800   0.56700   0.32540   Biso      1.000     O          -0.35634699999999997          
+         O12       1.0000    0.54800   0.83480   0.15560   Biso      1.000     O          -0.569707           
+         O13       1.0000    0.04800   0.33480   0.34440   Biso      1.000     O          -0.569684           
+         O14       1.0000    0.73200   0.52950   0.47100   Biso      1.000     O          -0.847417           
+         O15       1.0000    0.04800   0.16520   0.84440   Biso      1.000     O          -0.569987           
+         O16       1.0000    0.81800   0.06700   0.17460   Biso      1.000     O          -0.35654600000000003 

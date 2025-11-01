@@ -1,0 +1,64 @@
+
+##########################################################################
+#               Crystallographic Information Format file
+#               Produced by PyCifRW module
+#
+#  This is a CIF file.  CIF has been adopted by the International
+#  Union of Crystallography as the standard for data archiving and
+#  transmission.
+#
+#  For information on this file format, follow the CIF links at
+#  http://www.iucr.org
+##########################################################################
+
+data_image0
+
+_cell_length_a                          7.5231
+_cell_length_b                          9.8003
+_cell_length_c                          9.8003
+_cell_angle_alpha                       81.5285
+_cell_angle_beta                        67.4296
+_cell_angle_gamma                       67.4296
+_symmetry_space_group_name_H-M          'P 1'
+_symmetry_int_tables_number             1
+loop_
+  _symmetry_equiv_pos_as_xyz
+         'x, y, z' 
+loop_
+  _atom_site_label
+  _atom_site_occupancy
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_thermal_displace_type
+  _atom_site_B_iso_or_equiv
+  _atom_site_type_symbol
+  _atom_site_charge
+         C1        1.0000    0.65630   0.68560   0.79460   Biso      1.000     C          0.504213  
+         C2        1.0000    0.65810   0.20540   0.68560   Biso      1.000     C          0.506379  
+         C3        1.0000    0.54910   0.79460   0.31440   Biso      1.000     C          0.509263  
+         C4        1.0000    0.86350   0.68560   0.79460   Biso      1.000     C          0.507729  
+         C5        1.0000    0.34370   0.31440   0.20540   Biso      1.000     C          0.504213  
+         C6        1.0000    0.13650   0.31440   0.20540   Biso      1.000     C          0.507728  
+         C7        1.0000    0.34190   0.79460   0.31440   Biso      1.000     C          0.506379  
+         C8        1.0000    0.45090   0.20540   0.68560   Biso      1.000     C          0.509263  
+         O1        1.0000    0.05510   0.23570   0.30010   Biso      1.000     O          -0.58213  
+         O2        1.0000    0.40910   0.23570   0.30010   Biso      1.000     O          -0.580104           
+         O3        1.0000    0.70920   0.69990   0.23570   Biso      1.000     O          -0.582037           
+         O4        1.0000    0.93140   0.60670   0.88750   Biso      1.000     O          -0.562112           
+         O5        1.0000    0.81890   0.11250   0.60670   Biso      1.000     O          -0.562268           
+         O6        1.0000    0.18110   0.88750   0.39330   Biso      1.000     O          -0.562268           
+         O7        1.0000    0.35520   0.69990   0.23570   Biso      1.000     O          -0.581942           
+         O8        1.0000    0.94490   0.76430   0.69990   Biso      1.000     O          -0.582129           
+         O9        1.0000    0.06860   0.39330   0.11250   Biso      1.000     O          -0.562112           
+         O10       1.0000    0.64480   0.30010   0.76430   Biso      1.000     O          -0.581942           
+         O11       1.0000    0.42560   0.39330   0.11250   Biso      1.000     O          -0.56052  
+         O12       1.0000    0.53810   0.88750   0.39330   Biso      1.000     O          -0.562918           
+         O13       1.0000    0.59090   0.76430   0.69990   Biso      1.000     O          -0.580104           
+         O14       1.0000    0.57440   0.60670   0.88750   Biso      1.000     O          -0.56052  
+         O15       1.0000    0.29080   0.30010   0.76430   Biso      1.000     O          -0.582037           
+         O16       1.0000    0.46190   0.11250   0.60670   Biso      1.000     O          -0.562918           
+         Zr1       1.0000    0.30058   0.50373   0.89511   Biso      1.000     Zr          1.273325  
+         Zr2       1.0000    0.80431   0.89511   0.49627   Biso      1.000     Zr          1.273121  
+         Zr3       1.0000    0.69942   0.49627   0.10489   Biso      1.000     Zr          1.273326  
+         Zr4       1.0000    0.19569   0.10489   0.50373   Biso      1.000     Zr          1.273123 
